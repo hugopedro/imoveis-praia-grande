@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dossiê Imobiliário — Praia Grande (SP) → Centro de Santos | Últimos 3 Meses</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-canvas: #F8FAFC;
+      --bg-surface: #FFFFFF;
+      --bg-subtle: #F1F5F9;
+      --bg-inset: #E2E8F0;
+      --text-primary: #0F172A;
+      --text-secondary: #334155;
+      --text-muted: #64748B;
+      --border-default: #CBD5E1;
+      --border-subtle: #E2E8F0;
+      --accent-primary: #0369A1;
+      --accent-hover: #075985;
+      --accent-soft: #E0F2FE;
+      --emerald-ink: #065F46;
+      --emerald-bg: #D1FAE5;
+      --emerald-border: #6EE7B7;
+      --amber-ink: #92400E;
+      --amber-bg: #FEF3C7;
+      --amber-border: #FCD34D;
+      --slate-badge-bg: #F1F5F9;
+      --slate-badge-ink: #334155;
+      --radius-card: 8px;
+      --radius-badge: 4px;
+      --shadow-card: 0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
+      --shadow-hover: 0 10px 20px -5px rgba(15, 23, 42, 0.08), 0 4px 6px -2px rgba(15, 23, 42, 0.04);
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-canvas);
+      color: var(--text-primary);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+
+    /* Top Switcher Navigation */
+    .top-nav {
+      background-color: #020617;
+      border-bottom: 1px solid #1E293B;
+      padding: 0.65rem 1.5rem;
+    }
+    .top-nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      max-width: 1360px;
+      margin: 0 auto;
+    }
+    .nav-brand {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: #94A3B8;
+    }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .nav-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.4rem 0.85rem;
+      border-radius: var(--radius-badge);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.15s ease;
+      border: 1px solid #334155;
+      color: #CBD5E1;
+      background: #0F172A;
+    }
+    .nav-link:hover {
+      border-color: #38BDF8;
+      color: #FFFFFF;
+    }
+    .nav-link.active {
+      background: #0369A1;
+      color: #FFFFFF;
+      border-color: #38BDF8;
+    }
+    .nav-link.gold-cta {
+      background: #F59E0B;
+      color: #0F172A;
+      border-color: #F59E0B;
+      font-weight: 700;
+    }
+    .nav-link.gold-cta:hover {
+      background: #FBBF24;
+      color: #0F172A;
+    }
+
+    /* Top Masthead */
+    .masthead {
+      background-color: #0F172A;
+      color: #F8FAFC;
+      border-bottom: 1px solid #1E293B;
+      padding: 2rem 1.5rem 1.75rem;
+    }
+
+    .container {
+      max-width: 1360px;
+      margin: 0 auto;
+    }
+
+    .masthead-top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #38BDF8;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-badge);
+      margin-bottom: 0.75rem;
+    }
+
+    .masthead h1 {
+      font-size: clamp(1.5rem, 2.5vw, 2.15rem);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+      color: #FFFFFF;
+      max-width: 820px;
+    }
+
+    .masthead-subtitle {
+      color: #94A3B8;
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
+      max-width: 780px;
+    }
+
+    /* Strict Criteria Bar */
+    .criteria-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+      gap: 0.75rem;
+      background: #1E293B;
+      border: 1px solid #334155;
+      border-radius: var(--radius-card);
+      padding: 1rem;
+    }
+
+    .criteria-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      padding-right: 0.5rem;
+    }
+
+    .criteria-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #94A3B8;
+      font-weight: 600;
+    }
+
+    .criteria-value {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #F8FAFC;
+    }
+
+    /* Audit & Urbanistic Section */
+    .intel-section {
+      padding: 1.5rem 1.5rem 0.5rem;
+    }
+
+    .intel-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .intel-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-card);
+      padding: 1.15rem 1.25rem;
+      box-shadow: var(--shadow-card);
+    }
+
+    .intel-card.warning {
+      border-left: 4px solid #D97706;
+      background: #FFFBEB;
+    }
+
+    .intel-card.info {
+      border-left: 4px solid var(--accent-primary);
+    }
+
+    .intel-card.commute {
+      border-left: 4px solid #059669;
+    }
+
+    .intel-card h3 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.45rem;
+    }
+
+    .intel-card p {
+      font-size: 0.83rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+
+    .intel-card code {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      background: rgba(15, 23, 42, 0.06);
+      padding: 0.1rem 0.35rem;
+      border-radius: 3px;
+    }
+
+    /* Agency Pills Bar */
+    .agency-bar {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-card);
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.25rem;
+      box-shadow: var(--shadow-card);
+    }
+
+    .agency-bar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .agency-bar-title {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+    }
+
+    .agency-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .agency-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.45rem 0.8rem;
+      border-radius: var(--radius-badge);
+      border: 1px solid var(--border-default);
+      background: var(--bg-surface);
+      color: var(--text-secondary);
+      font-size: 0.82rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .agency-pill:hover {
+      border-color: var(--accent-primary);
+      color: var(--accent-primary);
+      background: #F0F9FF;
+    }
+
+    .agency-pill.active {
+      background: var(--accent-primary);
+      color: #FFFFFF;
+      border-color: var(--accent-primary);
+    }
+
+    .agency-pill .count {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.1rem 0.4rem;
+      border-radius: 3px;
+      background: var(--bg-subtle);
+      color: var(--text-primary);
+    }
+
+    .agency-pill.active .count {
+      background: rgba(255, 255, 255, 0.2);
+      color: #FFFFFF;
+    }
+
+    /* Sticky Filter Controls */
+    .controls-wrapper {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgba(248, 250, 252, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 0.9rem 1.5rem;
+    }
+
+    .controls-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr 1.1fr auto;
+      gap: 0.75rem;
+      align-items: end;
+    }
+
+    @media (max-width: 1100px) {
+      .controls-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
+    }
+
+    .control-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .control-group label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text-muted);
+    }
+
+    .control-input, .control-select {
+      width: 100%;
+      height: 38px;
+      padding: 0 0.75rem;
+      border: 1px solid var(--border-default);
+      border-radius: var(--radius-badge);
+      background: var(--bg-surface);
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      font-weight: 500;
+      outline: none;
+    }
+
+    .control-input:focus, .control-select:focus {
+      border-color: var(--accent-primary);
+      box-shadow: 0 0 0 2px rgba(3, 105, 161, 0.15);
+    }
+
+    .btn-reset {
+      height: 38px;
+      padding: 0 1rem;
+      border: 1px solid var(--border-default);
+      border-radius: var(--radius-badge);
+      background: var(--bg-surface);
+      color: var(--text-secondary);
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn-reset:hover {
+      background: var(--bg-subtle);
+      color: var(--text-primary);
+    }
+
+    /* Results Summary Bar */
+    .results-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 1.25rem 1.5rem 0.75rem;
+    }
+
+    .results-count {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .results-count span {
+      font-family: var(--font-mono);
+      color: var(--accent-primary);
+      font-weight: 700;
+    }
+
+    .quick-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+    }
+
+    /* Cards Grid */
+    .cards-section {
+      padding: 0.5rem 1.5rem 3.5rem;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 1.25rem;
+    }
+
+    @media (max-width: 420px) {
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .property-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+    }
+
+    .property-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-hover);
+      border-color: #94A3B8;
+    }
+
+    .card-media {
+      position: relative;
+      height: 205px;
+      background: #E2E8F0;
+      overflow: hidden;
+    }
+
+    .card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .badge-overlay-top {
+      position: absolute;
+      top: 0.65rem;
+      left: 0.65rem;
+      right: 0.65rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.5rem;
+      pointer-events: none;
+    }
+
+    .badge-agency {
+      background: rgba(15, 23, 42, 0.88);
+      color: #FFFFFF;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.25rem 0.55rem;
+      border-radius: var(--radius-badge);
+      backdrop-filter: blur(4px);
+    }
+
+    .badge-date {
+      background: rgba(255, 255, 255, 0.94);
+      color: #0F172A;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.22rem 0.5rem;
+      border-radius: var(--radius-badge);
+      border: 1px solid rgba(15, 23, 42, 0.1);
+    }
+
+    .badge-overlay-bottom {
+      position: absolute;
+      bottom: 0.65rem;
+      left: 0.65rem;
+      right: 0.65rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .badge-neigh {
+      font-size: 0.74rem;
+      font-weight: 700;
+      padding: 0.24rem 0.6rem;
+      border-radius: var(--radius-badge);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .badge-neigh.primary {
+      background: var(--emerald-bg);
+      color: var(--emerald-ink);
+      border: 1px solid var(--emerald-border);
+    }
+
+    .badge-neigh.secondary {
+      background: #E0F2FE;
+      color: #075985;
+      border: 1px solid #7DD3FC;
+    }
+
+    .badge-ref {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 600;
+      background: rgba(15, 23, 42, 0.8);
+      color: #E2E8F0;
+      padding: 0.2rem 0.45rem;
+      border-radius: var(--radius-badge);
+    }
+
+    .card-body {
+      padding: 1.1rem 1.15rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      gap: 0.9rem;
+    }
+
+    /* Pricing Block */
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 0.75rem;
+    }
+
+    .sale-price-block {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sale-price-label {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .sale-price {
+      font-family: var(--font-mono);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+    }
+
+    .monthly-box {
+      text-align: right;
+    }
+
+    .monthly-line {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+    }
+
+    .monthly-line strong {
+      color: var(--emerald-ink);
+      font-weight: 700;
+    }
+
+    .monthly-sub {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+
+    /* Specs 4-Column Tabular Grid */
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.4rem;
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-badge);
+      padding: 0.55rem 0.5rem;
+      text-align: center;
+    }
+
+    .spec-cell {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .spec-val {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .spec-lbl {
+      font-size: 0.66rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      font-weight: 600;
+    }
+
+    .card-desc {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      line-height: 1.45;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      flex: 1;
+    }
+
+    .card-footer {
+      margin-top: auto;
+      padding-top: 0.4rem;
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .btn-visit {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding: 0.6rem 0.9rem;
+      background: var(--text-primary);
+      color: #FFFFFF;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+      border-radius: var(--radius-badge);
+      transition: background 0.15s ease;
+    }
+
+    .btn-visit:hover {
+      background: var(--accent-primary);
+    }
+
+    /* Empty state */
+    .empty-state {
+      background: var(--bg-surface);
+      border: 1px dashed var(--border-default);
+      border-radius: var(--radius-card);
+      padding: 3rem 1.5rem;
+      text-align: center;
+      grid-column: 1 / -1;
+    }
+
+    .empty-state h4 {
+      font-size: 1.05rem;
+      margin-bottom: 0.4rem;
+      color: var(--text-primary);
+    }
+
+    .empty-state p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      max-width: 520px;
+      margin: 0 auto 1rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--border-subtle);
+      background: var(--bg-surface);
+      padding: 2rem 1.5rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="top-nav">
+    <div class="top-nav-inner">
+      <div class="nav-brand">
+        <span>DOSSIÊ IMOBILIÁRIO PRAIA GRANDE → CENTRO DE SANTOS (R. DOM PEDRO II, 25)</span>
+      </div>
+      <div class="nav-links">
+        <a href="./catalogo.html" class="nav-link active">📋 Catálogo Completo (100 Imóveis)</a>
+        <a href="./index.html" class="nav-link gold-cta">🏆 Ver Os 15 Melhores — Minha Escolha (#1 a #15) ↗</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="masthead">
+    <div class="container">
+      <div class="masthead-top">
+        <div>
+          <div class="eyebrow">Varredura Verificada • 8 Corretoras Locais • Corte Trimestral (Ago–Nov 2026)</div>
+          <h1>Apartamentos em Praia Grande para quem trabalha no Centro de Santos</h1>
+          <p class="masthead-subtitle">
+            Levantamento auditado para deslocamento diário até a <strong>Rua Dom Pedro II, 25 (Centro de Santos)</strong>, priorizando segurança urbana nas caminhadas até os pontos das linhas 905, 931, 934EX1 e 927 (BR Mobilidade).
+          </p>
+        </div>
+      </div>
+
+      <div class="criteria-strip">
+        <div class="criteria-item">
+          <span class="criteria-label">Preço Máximo</span>
+          <span class="criteria-value">Até R$ 400.000</span>
+        </div>
+        <div class="criteria-item">
+          <span class="criteria-label">Condomínio Mensal</span>
+          <span class="criteria-value">Até R$ 800 / mês</span>
+        </div>
+        <div class="criteria-item">
+          <span class="criteria-label">Área Mínima (1 Quarto)</span>
+          <span class="criteria-value">≥ 55,0 m² úteis</span>
+        </div>
+        <div class="criteria-item">
+          <span class="criteria-label">Área Mínima (2 Quartos)</span>
+          <span class="criteria-value">≥ 70,0 m² úteis</span>
+        </div>
+        <div class="criteria-item">
+          <span class="criteria-label">Itens Obrigatórios</span>
+          <span class="criteria-value">Elevador + ≥ 1 Vaga</span>
+        </div>
+        <div class="criteria-item">
+          <span class="criteria-label">Recência do Anúncio</span>
+          <span class="criteria-value">Últimos 3 Meses (≥ 10/08/2026)</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="intel-section">
+    <div class="container">
+      <div class="intel-grid">
+        <div class="intel-card commute">
+          <h3>
+            <span>🚌 Logística para Rua Dom Pedro II, 25 (Centro de Santos)</span>
+            <span style="font-size:0.72rem;color:#059669;font-family:var(--font-mono)">50–65 MIN</span>
+          </h3>
+          <p>
+            <strong>Vila Guilhermina</strong> e <strong>Vila Tupi</strong> concentram a melhor combinação de prédios verticais com elevador, comércio iluminado no entorno da Av. Pres. Kennedy e acesso direto às linhas <code>905</code> (Integração VLT São Vicente → Estação Valongo/Centro de Santos) e expressos rodoviários <code>931</code> / <code>934EX1</code> / <code>927</code> via Via Expressa Sul e Ponte Pênsil.
+          </p>
+        </div>
+
+        <div class="intel-card warning">
+          <h3>
+            <span>⚠️ Nota Técnica: Sítio do Campo (Tude Bastos / Guaramar)</span>
+            <span style="font-size:0.72rem;color:#92400E;font-family:var(--font-mono)">ZONEAMENTO BAIXO</span>
+          </h3>
+          <p>
+            Embora excelente pela colagem ao Terminal Tude Bastos, a varredura nas 8 corretoras revelou <strong>zero prédios com elevador</strong> dentro do filtro no Sítio do Campo: devido ao gabarito próximo ao Aeródromo/Kartódromo, a oferta até R$ 400 mil lá é composta por <strong>Casas/Sobrados de Condomínio</strong> (25 imóveis na Praialar) ou prédios baixos de escada (ex.: <code>AP30867-NOW9</code> na Nova Casarão, 2q, 72m², R$ 380 mil, sem elevador).
+          </p>
+        </div>
+
+        <div class="intel-card info">
+          <h3>
+            <span>🔍 Auditoria RE/MAX Praia Grande & Portais</span>
+            <span style="font-size:0.72rem;color:#0369A1;font-family:var(--font-mono)">75 IMÓVEIS AUDITADOS</span>
+          </h3>
+          <p>
+            Consultamos diretamente a API da <strong>RE/MAX Brasil</strong> em Praia Grande (75 imóveis até R$ 400 mil): na Guilhermina/Tupi os anúncios abaixo de R$ 400 mil têm metragem menor (<code>602321028-128</code> com 49m², <code>691341006-5</code> com 45,5m²) ou mais de 3 meses (<code>691161020-8</code> de mai/2026). Na Ocian, o <code>601251257-59</code> (R$ 335 mil, Cond. R$ 603, elevador, set/2026) ficou fora por ter <strong>54 m²</strong> (1 m² abaixo do piso).
+          </p>
+        </div>
+      </div>
+
+      <div class="agency-bar">
+        <div class="agency-bar-header">
+          <span class="agency-bar-title">Filtrar por Corretora Auditada (Clique para isolar)</span>
+          <span style="font-size:0.78rem;color:var(--text-muted)">100 imóveis aprovados em 100% dos critérios (timestamps ISO/RSS auditados)</span>
+        </div>
+        <div class="agency-pills" id="agencyPills">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="controls-wrapper">
+    <div class="container">
+      <div class="controls-grid">
+        <div class="control-group">
+          <label for="filterNeighborhood">Bairro (Principais vs. Secundários)</label>
+          <select id="filterNeighborhood" class="control-select">
+            <option value="ALL">Todos os Bairros Analisados (100)</option>
+            <option value="TOP15">🏆 Apenas Os 15 Melhores Escolhidos (15)</option>
+            <option value="PRIMARY">⭐ Apenas Principais Sugeridos: Guilhermina + Tupi (60)</option>
+            <option value="Vila Guilhermina">📍 Vila Guilhermina (26)</option>
+            <option value="Vila Tupi">📍 Vila Tupi (34)</option>
+            <option value="Sítio do Campo">📍 Sítio do Campo / Tude Bastos (0 — ver nota técnica)</option>
+            <option value="SECONDARY">🔹 Bairros Secundários: Aviação, Ocian, Boqueirão, Mirim (40)</option>
+            <option value="Aviação">Aviação (20)</option>
+            <option value="Cidade Ocian">Cidade Ocian (12)</option>
+            <option value="Boqueirão">Boqueirão (6)</option>
+            <option value="Vila Mirim">Vila Mirim (2)</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label for="filterBedrooms">Dormitórios & Metragem</label>
+          <select id="filterBedrooms" class="control-select">
+            <option value="ALL">1 ou 2 Quartos (Todos)</option>
+            <option value="1">1 Quarto (≥ 55 m²)</option>
+            <option value="2">2 Quartos (≥ 70 m²)</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label for="filterMaxPrice">Preço Máximo de Venda</label>
+          <select id="filterMaxPrice" class="control-select">
+            <option value="400000">Até R$ 400.000 (Teto)</option>
+            <option value="375000">Até R$ 375.000</option>
+            <option value="350000">Até R$ 350.000</option>
+            <option value="325000">Até R$ 325.000</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label for="filterMaxCondo">Condomínio Máximo</label>
+          <select id="filterMaxCondo" class="control-select">
+            <option value="800">Até R$ 800 / mês (Teto)</option>
+            <option value="650">Até R$ 650 / mês</option>
+            <option value="550">Até R$ 550 / mês</option>
+            <option value="480">Até R$ 480 / mês</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label for="sortBy">Ordenar Resultados Por</label>
+          <select id="sortBy" class="control-select">
+            <option value="RECENT">Mais Recentes Primeiro</option>
+            <option value="RANK_ASC">🏆 Ranking Escolha Pessoal (#1 → #15)</option>
+            <option value="PRICE_ASC">Menor Preço de Venda</option>
+            <option value="CONDO_ASC">Menor Condomínio Mensal</option>
+            <option value="TOTAL_MONTHLY_ASC">Menor Custo Fixo (Cond. + IPTU)</option>
+            <option value="AREA_DESC">Maior Área Útil (m²)</option>
+            <option value="PSM_ASC">Menor Valor por m² (R$/m²)</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label for="searchInput">Busca Rápida (Ref / Texto)</label>
+          <div style="display:flex;gap:0.4rem;">
+            <input type="text" id="searchInput" class="control-input" placeholder="Ex: suíte, AP34814..." />
+            <button type="button" id="btnReset" class="btn-reset" title="Limpar todos os filtros">Limpar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="results-header">
+      <div class="results-count" id="resultsCount">
+        Exibindo <span>100</span> apartamentos verificados
+      </div>
+      <div class="quick-stats" id="quickStats">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </div>
+
+  <main class="cards-section">
+    <div class="container">
+      <div class="cards-grid" id="cardsGrid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      Dossiê compilado automaticamente em 10/11/2026 • Todos os 100 anúncios possuem link direto para a corretora oficial, elevador confirmado, ≥ 1 vaga de garagem, condomínio ≤ R$ 800 e atualização entre Agosto e Novembro de 2026.
+    </div>
+  </footer>
+
+  <script>
+    const LISTINGS = [{"agency": "Agência da Praia Imóveis", "ref": "AP20192-KEIM", "neighborhood": "Vila Guilhermina", "bedrooms": 1, "suites": 1, "bathrooms": 2, "garages": 1, "area": 57.41, "price": 370000.0, "condo": 632.0, "iptu": 420.0, "updated_at": "2026-11-10", "url": "https://www.agenciadapraia.com.br/imovel/apartamento-praia-grande-1-quarto-57-m/AP20192-KEIM", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu1x8jsIw2zN7jMEYZbmAshvZjry6w-uajXyR1Yrr4KOEit3kQ9bT6roG+KvyM1-8t7ZoQ9YuAmFJXedfQE3pY42pZUANjAKKtB-XULBrE3ZSwSggrSBgwFuCaoK33m4H1QWmBK3A8XCWHY-gRA1CRbMNAdIz7EIJ8RC9W0J8p0oF7Jq1qTLdaOenJpi9yWxNWAZ8vJq+TqjzwtiOK59nSeUyO3cb51URUaJf1-aKA+9jrwcLou-TCwSW3hrDkec3f8vtBcFKmqQDlRDFHrNO70+-woWRhaz5bUWOZlA+pLGc-fS5b-rwSfvzLCWKlZcH+diKf-5JJIS1HWdXV3hjJXwD5Re29rnZr1GrOHiZth5HFUHf1pV4qw==.jpg", "desc": "OPORTUNIDADE IMPERDÍVEL! APARTAMENTO À VENDA NA GUILHERMINA PRAIA GRANDE/SP • Seu novo imóvel na praia espera por você! • Se você procura conforto, praticidade e lazer para aproveitar os melhores momentos…", "tier": "primary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Plaza Imóveis", "ref": "AP21645-PLA", "neighborhood": "Vila Tupi", "bedrooms": 2, "suites": 1, "bathrooms": 1, "garages": 1, "area": 77.0, "price": 400000.0, "condo": 701.64, "iptu": 327.72, "updated_at": "2026-11-09", "url": "https://www.litoralplazaimoveis.com.br/imovel/apartamento-praia-grande-2-quartos-77-m/AP21645-PLA", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu25F6dBzylIXieshc5GDoyC8xpqJzPnAr0iS+rryj63g-M3kfMH8kIQc+6OiPE+LkpRYfesdE0dLV9J5eSa6Rd2HFmBS+B+pmmvdX5keb0Bq3T8psScM40unXYKM+kFq5GS5TqiIlHLcXZ-PJ3sZRbMNAdsz6EIJ9xa9SUxy8h8d55m-oS7TO7S-K5+hxzlXFx5k9oa+SuKv15TFJsonDqooL34J41sRFqAe2beFX6J24QkLuOfUB1+EkBnHl+8kYMGwX9dMmLwLlwjKE+Ac7x64kI2UhPP+Z0+HZwA6prnMrffkOP36HLSNW0+DxctTxrH5Fesed9qVKEsAACZUFQAlyiO6qvXO4g6rcjWJtghHFEbfwI4npnZ9dRhc.jpg", "desc": "Apartamento com 2 dormitórios à venda no Bairro Tupi, Praia Grande/SP. • Imóvel com 77 m² de área útil, distribuído em 2 dormitórios, sala com dois ambientes, sacada, cozinha, área de serviço, banheiro social e vaga…", "tier": "primary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Imigrantes Imóveis", "ref": "IMIG-5674", "neighborhood": "Boqueirão", "tier": "secondary", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 55.0, "price": 385000.0, "condo": 681.0, "iptu": 250.0, "updated_at": "2026-11-07", "url": "https://imigrantesimoveis.com.br/imovel/apartamento-a-venda-1-quarto-boqueirao-praia-grande-sp-55m2-id-5674", "photo": "https://cdn3.praedium.com.br/10897AwAFd7bFizSu7Tq/368704825844883/obpdoxw2ywvmnwnindm0yzu4_md.jpg", "desc": "A apenas 700 metros da praia e andar alto no Boqueirão! Sala 2 ambientes, 1 dormitório (55 m²), cozinha, área de serviço, 1 vaga de garagem coberta e elevador.", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Nova Casarão Imóveis", "ref": "AP34814-NOW9", "neighborhood": "Vila Tupi", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 56.0, "price": 330000.0, "condo": 780.0, "iptu": 310.0, "updated_at": "2026-11-06", "url": "https://www.novacasarao.com.br/imovel/apartamento-praia-grande-1-quarto-56-m/AP34814-NOW9", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu2Rb2eVAzAoet8NDXISAmnaGxK-Iu-SYihTI06vXuIL6xdP+duvP440P-JHdKEKNvKpJHcYcb2tFNttdSAPjeqWZLEZwrGap-RmIVbAXUW5p018Yzw9N5FG6WZKJyVMeyS+VLdfx+zWhd4bUKgJTQPlLCdkx8QdQ8Bi1SUxy8h8d55m-oS7TO7S-K5+hxzlXFx5k9oa+Squ619jCLJU4Vr0lNm4L5VMZWe0S2-TJT-8+5wEDqv3JFhXchgzWgPAoc9j0Qd1OmKQHiAfASbVHvxizw4fD0PCqak7UYAU88umY+fKybfz1TfigOWWtkpoCu5mVLs1OJMfrXzYXAzhnLjVRp1LkteiL+gDnZ3jWtl0VWAvE3NE=.jpg", "desc": "Imagine morar em um apartamento em andar alto, com vista livre e vista mar, onde a luz natural e a brisa fazem parte da sua rotina. Uma oportunidade única para quem busca conforto, segurança e excelente potencial…", "tier": "primary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Plaza Imóveis", "ref": "AP21629-PLA", "neighborhood": "Aviação", "bedrooms": 1, "suites": 1, "bathrooms": 1, "garages": 1, "area": 74.0, "price": 360000.0, "condo": 770.0, "iptu": 360.0, "updated_at": "2026-11-06", "url": "https://www.litoralplazaimoveis.com.br/imovel/apartamento-praia-grande-1-quarto-74-m/AP21629-PLA", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu3c-+dhetxdupZcQGae6jnSdwpSjv-a9plunxKLxhLDb0eTyTZnS2bwx1LzWOQ726KtaZow4NHcmaLBGTxPGdqedE3EM5ijUtxjsZqRdckRrgAEZsBl-nmClct3z138ox3ClIdHaiWvQELjkBlhTQPlLANk18QdW9hinR0InpwcW5JO3vSCAaKyyLIOvkiMYDwYu6oa6APevm5PPedV-GacxP3wP61NeW6wcmvuVAupw6QEZovrFTQeShQjQiOM3eYWuV9pMg6sDkAbLSeBL6h3tz9fH0vekbUzSYFRu9OvK-ae1P-b2BdWOU0fp0skz2rziDo8JdbmDICMXAlVCEgQy2F7ktPyL7AD5bSnYrhALDRPRzsM49G5wclU=.jpg", "desc": "Apartamento a apenas 350 metros da praia, em excelente localização na Praia Grande! • O imóvel conta com 74m² de área útil, muito bem distribuídos em 01 dormitório com suíte, sala ampla para 02 ambientes, sacada…", "tier": "secondary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Casa Paris Imóveis", "ref": "CP-19947", "neighborhood": "Vila Tupi", "tier": "primary", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 59.24, "price": 360000.0, "condo": 547.09, "iptu": 302.07, "updated_at": "2026-11-06", "url": "https://www.casaparisimoveis.com.br/imovel/apartamento-a-venda-tupi-praia-grande-sp/19947", "photo": "https://cdn.imoview.com.br/casaparis/Imoveis/19947/iomw9-whatsapp-image-2026-11-06-at-144013-1-1793989756.jpeg?1793989757", "desc": "Apartamento amplo com 59,24 m² na Vila Tupi, sacada, portaria remota, elevador e 1 vaga de garagem.", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Plaza Imóveis", "ref": "AP21633-PLA", "neighborhood": "Vila Tupi", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 55.0, "price": 365000.0, "condo": 508.35, "iptu": 237.89, "updated_at": "2026-11-06", "url": "https://www.litoralplazaimoveis.com.br/imovel/apartamento-praia-grande-1-quarto-55-m/AP21633-PLA", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu0c5jthX40oFk+4fDa6mjgyG4tWMvPKj9UTGwarK7o734szaDJ3Qxa006bXuKmm9sLx3RvYAKF1XebBEahrdYIyfEXF7vzWHg3nRVLBHfXta2SZvoC5xlXG5cqOIrVFuyyGqN+vfkgnVTYv2H0xDQPlLANk18QdW9hinR0InpwcW5JO3vSCAaKyyLIOvkiMYDwYu6oa6APevm5PPedV-GacxP3wP61NeW6wcmvuVAupw6QEZovrFTQeShQjQiOM3eYWuV9pMg6sDkAbLSeBL6h3tz9fH0vekbUzSYFRu9OvK-ae1P-b2BdWOU0fp0skz2rziDo8JdbmDICMXAlVCEgQy2F7ktPyL7AD5bSnYrhALDRPRzsM49G5wclU=.jpg", "desc": "Apartamento a apenas 100 metros da praia, em excelente localização na Praia Grande! • O imóvel conta com 55m² de área útil, muito bem distribuídos em 01 dormitório, sala ampla para 02 ambientes, sacada, cozinha…", "tier": "primary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Plaza Imóveis", "ref": "AP21628-PLA", "neighborhood": "Aviação", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 55.0, "price": 370000.0, "condo": 588.0, "iptu": 288.0, "updated_at": "2026-11-06", "url": "https://www.litoralplazaimoveis.com.br/imovel/apartamento-praia-grande-1-quarto-55-m/AP21628-PLA", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu1xX69lk4hMdg+UIX4OJnS6e2ICevo6lnUGXxbDpp4-j+vvnRt-V2Yc93vLaTmelrIN8Z4YhdllXStFeT0P1GtfFJFELrxfWrGucROtiaDV2jx5izQcJz0WZe6Ku3FoSxCf1M+7okj+VaPH9ImVDQPlLANk18QdW9hinR0InpwcW5JO3vSCAaKyyLIOvkiMYDwYu6oa6APevm5PPedV-GacxP3wP61NeW6wcmvuVAupw6QEZovrFTQeShQjQiOM3eYWuV9pMg6sDkAbLSeBL6h3tz9fH0vekbUzSYFRu9OvK-ae1P-b2BdWOU0fp0skz2rziDo8JdbmDICMXAlVCEgQy2F7ktPyL7AD5bSnYrhALDRPRzsM49G5wclU=.jpg", "desc": "Apartamento a apenas 250 metros da praia, em excelente localização na Praia Grande! • O imóvel conta com 55m² de área útil, muito bem distribuídos em 01 dormitório, sala ampla para 02 ambientes, sacada gourmet…", "tier": "secondary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Agência da Praia Imóveis", "ref": "AP20400-KEIM", "neighborhood": "Vila Tupi", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 73.0, "price": 380000.0, "condo": 604.0, "iptu": 359.0, "updated_at": "2026-11-06", "url": "https://www.agenciadapraia.com.br/imovel/apartamento-praia-grande-1-quarto-73-m/AP20400-KEIM", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu3de0Jd83QYBuPMFRYaQmnC746S+uPiWhl3JoL+Pn6rbx-TVbfzuy4Md0bzWCkTytoJSa-UXNXpmP-VjeAy2ctjYJE9tvjio+k7wEpoXcTtrhwwtqkh1716aWaOu2Vhv1X76VujxtxygFZe4JlBlQP1CANsj8E0W4hq0WVhgqR9W9JGwoS7TPfunJo3lkTpKRh5psZGuVOmujpbNPZ5uGaIldHgB7xwSSuwW1fCGXuRl5U8dqvrFEB2SgwaN17RyIpiwWNtJnKZSkwvCTbNHvxyzztHEh-SlbEiAOwA59+nN+vqsSrusTPbkJjiYkpgN5Y3ZPc9VMY-oHWhCEDo1MD0AqUq2ubmF4k35IGDDpE8=.jpg", "desc": "Excelente apartamento de 1 dormitório, com impressionantes 73 m² de área útil, oferecendo muito espaço e conforto. O imóvel conta com sala ampla para dois ambientes, duas sacadas com vista livre, cozinha com móveis…", "tier": "primary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Agência da Praia Imóveis", "ref": "AP19986-KEIM", "neighborhood": "Vila Tupi", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 55.0, "price": 330000.0, "condo": 562.0, "iptu": 244.61, "updated_at": "2026-11-04", "url": "https://www.agenciadapraia.com.br/imovel/apartamento-praia-grande-1-quarto-55-m/AP19986-KEIM", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu3w734Jw-U48tfUlfpm95jCf1afI7sXAoR274LDr4+znx+nAeOjz1awO3oDpHHKemoBea-Y2AUxbRNJmeiPwXZukF15c+yuomnrvE4B9WUV+8hg0tj0O82CrbcX81UBr2wyeVfr3qjKcR53cOUZ8JLMNAdsz6EIJ9xa9SUxy8h8d55m-oS7TO7S-K5+hxzlXFx5k9oa+Squ619jCLJU4Vr0lNm4L5VMZWe0S2-TJT-8+5wEDqv3JFhXchgzWgPAoc9j0QdxOm6MBiAnGGrJLuxq-x9LGjfCuZ0XTMFBs-Lua-vriOPyjSqv5OU65jp0Ms8+IG9haK5m2DHRAXGJybiId7FK4+OvGswCzIDnYuBAKChPH1Zw1.jpg", "desc": "APARTAMENTO EM VILA TUPI PRAIA GRANDE-SP • Apartamento de um dormitório e demais dependências - 01 vaga de garagem coletiva . • Prédio com piscina, salão de jogos e dois elevadores. • Entre em contato conosco e agende…", "tier": "primary", "mirror_of": "Nova Casarão Imóveis (AP18485-NOW9)", "is_secondary_mirror": false}, {"agency": "Imigrantes Imóveis", "ref": "IMIG-5656", "neighborhood": "Vila Tupi", "tier": "primary", "bedrooms": 2, "suites": 1, "bathrooms": 2, "garages": 1, "area": 76.0, "price": 400000.0, "condo": 728.0, "iptu": 340.0, "updated_at": "2026-11-04", "url": "https://imigrantesimoveis.com.br/imovel/apartamento-a-venda-2-quartos-vila-tupi-praia-grande-sp-76m2-id-5656", "photo": "https://cdn3.praedium.com.br/10897AwAFd7bFizSu7Tq/116402309863116/l5osfw2ywviodmynwfhywux_md.jpg", "desc": "Apartamento na Vila Tupi com 76 m², sacada, sala 2 ambientes, 2 dormitórios sendo 1 suíte, 1 vaga de garagem coberta, elevador, salão de festas e jogos.", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Agência da Praia Imóveis", "ref": "AP14426-KEIM", "neighborhood": "Vila Tupi", "bedrooms": 2, "suites": 1, "bathrooms": 2, "garages": 1, "area": 76.0, "price": 400000.0, "condo": 782.0, "iptu": 340.0, "updated_at": "2026-10-31", "url": "https://www.agenciadapraia.com.br/imovel/apartamento-praia-grande-2-quartos-76-m/AP14426-KEIM", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtuxhNgddrxzoEitAWQ6eSnRW61IOZ44e6i2bNyKSGo5j8+NnccJ7Z7Lcl3YHdFmGekvBXX8wKEUR+f8MjZBXXeLm7Z3J4+jCeqxrEfv5USWBZhwUMjChRzUOjBrWU8FES-iWiGdiGgz+DZrq9AFtODrMNAdIz7EIJ8RC9W0J8p0oF7Jq1qTLdaOenJpi9yWxNWAZ8vJq+TqjzwtiOK59nSeUyO3cb51URUaJf1-aKA+9jrwcLou-TCwSW3hrDkec3f8vtBcFKmqQDlRDFHrNO70+-woWRhaz5bUWOZlA+pLGc-fS5b-rwSfvzLCWKlZcH+diKf-5JJIS1HWdXV3hjJXwD5Re29rnZr1GrOHiZth5HFUHf1pV4qw==.jpg", "desc": "APARTAMENTO À VENDA NA VILA TUPI PRAIA GRANDE! • A apenas 100 metros do mar! • Excelente oportunidade para quem busca conforto, praticidade e uma localização privilegiada no litoral. • O imóvel oferece…", "tier": "primary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Nova Casarão Imóveis", "ref": "AP34584-NOW9", "neighborhood": "Cidade Ocian", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 57.0, "price": 320000.0, "condo": 653.0, "iptu": 298.0, "updated_at": "2026-10-30", "url": "https://www.novacasarao.com.br/imovel/apartamento-praia-grande-1-quarto-57-m/AP34584-NOW9", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtux57+sAz6Q8SvvUlTr6DuCaW1beG-u-JtW2c58vnlJDX6OXHQfDCw94ewYnPQ2Ots5lCTdAFDFlDabAhbDmyBqGCJFp7-x+TiHX6FuJ2ZWBW-CMorhln+la0eqqG9HsJhy6LMfHihwGRbq34XHJlJ+9HR9o47l9MqBG1U1ByqR9Q9JG2ozrBZrT0PpW61WIYQklkpNCiTqzwi82OZ5htFvpqLHoC91cXWaoQmvqIQKNz8k8NqufBERmHlELVhPYgYMf+HIVXn6UHkAvcE7Ec7RfuwIzCh6H4OkuDMAFuo7mYqfWwPP2jGq6kdWnhjZgR9ZyVK4daIp+nQCsXAiQmbiId7FK4+OvGswCzIDSfth5HFUHf1pV4qw==.jpg", "desc": "IMÓVEL COM REDUÇÃO DE VALOR PARA A SELECT WEEK DE R$ R$ 335.000,00 PARA R$ 320.000,00 • Apartamento de 1 Dormitório a 250m da Praia no Ocian 57m² • Se você busca praticidade, conforto e a proximidade do mar…", "tier": "secondary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Nova Casarão Imóveis", "ref": "AP6230-NOW9", "neighborhood": "Vila Tupi", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 63.0, "price": 350000.0, "condo": 558.0, "iptu": 317.0, "updated_at": "2026-10-30", "url": "https://www.novacasarao.com.br/imovel/apartamento-praia-grande-1-quarto-63-m/AP6230-NOW9", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu11Lgf1F3UgBy9gUYbOX5xC76ZWQ2oedjmimqKnNr6PBiJmgUcHP9bIO6a3DOFCDgqNUeN8MMX5dd7FwHRa2cLu+YyFKmiatvWfyY+JBZUxr+BA-zAYInne9QcmXrQVo1zirD9Pi8SOdaIDPJQJ6DrMNAdsz6EIJ9xa9SUxy8h8d55m-oS7TO7S-K5+hxzlXFx5k9oa+Squ619jCLJU4Vr0lNm4L5VMZWe0S2-TJT-8+5wEDqv3JFhXchgzWgPAoc9j0Qd1OmKQHiAfASbVHvxizw4fD0PCqak7UYAU88umY+fKybfz1TfigOWWtkpoCu5mVLs1OJMfrXzYXAzhnLjVRp1LkteiL+gDnZ3jWtl0VWAvE3NE=.jpg", "desc": "IMÓVEL COM REDUÇÃO DE VALOR PARA A SELECT WEEK DE R$ 390.000,00 PARA R$ 350.000,00 • Este apartamento à venda com 1 quarto em Praia Grande, no bairro Vila Tupi, é uma excelente opção para quem busca localização…", "tier": "primary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Agência da Praia Imóveis", "ref": "AP20037-KEIM", "neighborhood": "Cidade Ocian", "bedrooms": 2, "suites": 1, "bathrooms": 2, "garages": 1, "area": 70.0, "price": 350000.0, "condo": 735.0, "iptu": 313.0, "updated_at": "2026-10-30", "url": "https://www.agenciadapraia.com.br/imovel/apartamento-praia-grande-2-quartos-70-m/AP20037-KEIM", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu1lW-9hr5w8FreY3e7KetwDb-4nFzImg92W854-Wr73h++XbW9bh1oIO-Iz-AgD8jfZOduU+A29WSdQ-fj7kRYKgIyBQ-3y9hn3faedefVENgw0JmylZgWziVIHp3n9p2TmHGe6HshyoYrH2ImMNCe1HR9o47l9MqBG1U1ByqR9Q9JG2ozrBZrT0PpW61WIYQklkpNCiTqzwi82OZ5htFvpqLHoC91cXWaoQmvqIQKNz8k8NqufBERmHlELVhPYgYMf+HIVXnqUElw3cHbdP6hvqwoDG0qSlOk+OOwY+9umW+-e3NK32GvijJjDhpowN8pKdfZpvN4uoHnZEQHN5NDdd+x7z+LeLsE36IGDY9xBJWF6NzpZx5ik=.jpg", "desc": "OPORTUNIDADE DE VENDA NA OCIAN - PRAIA GRANDE! • Quer morar pertinho da praia e ainda contar com lazer completo? Essa oportunidade é para você! • Excelente localização no bairro Ocian, próximo à praia e a todo…", "tier": "secondary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Nova Casarão Imóveis", "ref": "AP34546-NOW9", "neighborhood": "Vila Guilhermina", "bedrooms": 1, "suites": 1, "bathrooms": 2, "garages": 1, "area": 56.0, "price": 370000.0, "condo": 542.0, "iptu": 335.0, "updated_at": "2026-10-30", "url": "https://www.novacasarao.com.br/imovel/apartamento-praia-grande-1-quarto-56-m/AP34546-NOW9", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu0pZ-cBu3U4nysYVbqT7uCyq97Wt3o6UrG7P+ZOMnaLX1MD0Zf-Y8tkf1YjuTFSis4N-esN7Y3h7Zu8ibkC0eLegF3FAsR2hr33JSJobaDJL21sX1TFgmQaXXKKz6Hlo0H2bFM3VuirQc5LHO1ZdHsVHR9ox7ltMqBezU0J8p0oF7Jq1qTLdaOenJpi9yWxNWAZ8vJq+TqjzwtiOK59nSeUyO3cb51URUaJf1-aKA+9jrwcLou-TCwSW3hrDkec3f8vtBcFLmqcEkxDLGOBJ40u9zoHEgPH5aUiFYQBr9L-O--OxP6-wH-ygdSWhgYsA99DcYstcMIvrQDQVACc5MDwUqVy2qvTa4hirbD-YuBAKChPH1Zw1.jpg", "desc": "Apartamento à venda na Guilhermina Praia Grande/SP. • Se você procura conforto, praticidade e uma excelente localização, este apartamento é a escolha ideal! • Características do imóvel: • * 1 dormitório com suíte…", "tier": "primary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Imigrantes Imóveis", "ref": "IMIG-5623", "neighborhood": "Vila Guilhermina", "tier": "primary", "bedrooms": 2, "suites": 0, "bathrooms": 1, "garages": 1, "area": 74.0, "price": 390000.0, "condo": 710.0, "iptu": 0.0, "updated_at": "2026-10-30", "url": "https://imigrantesimoveis.com.br/imovel/apartamento-a-venda-2-quartos-guilhermina-praia-grande-sp-74m2-id-5623", "photo": "https://cdn3.praedium.com.br/10897AwAFd7bFizSu7Tq/28134155091743/fuz9cbk2ywu0ztq1yzg2zwvj_md.jpg", "desc": "Com vista mar, a apenas 100 metros da praia e andar alto na Vila Guilhermina! 74 m² úteis, 2 dormitórios, 1 vaga de garagem coberta, piscina, elevador e lazer.", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Agência da Praia Imóveis", "ref": "AP20052-KEIM", "neighborhood": "Cidade Ocian", "bedrooms": 2, "suites": 1, "bathrooms": 2, "garages": 1, "area": 72.03, "price": 395000.0, "condo": 562.97, "iptu": 182.43, "updated_at": "2026-10-30", "url": "https://www.agenciadapraia.com.br/imovel/apartamento-praia-grande-2-quartos-72-m/AP20052-KEIM", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtuxxo+-dK4C1kntU0GYS3sBO+4Zu5zIa2kXWyybqK5ZPB7+HHYpff5r1v0KrWDXGnr61ifuUfCFB2ZeBlVwLFf5q-JH5jrBePvR76frkXBnVN0yZ3sAlv3lqicZ6T3HAqniilCPzToBasQfHhPQxgHr5HR9o47l9MqBG1U1ByqR9Q9JG2ozrBZrT0PpW61WIYQklkpNCiTqzwi82OZ5htFvpqLHoC91cXWaoQmvqIQKNz8k8NqufBERmHlELVhPYgYMf+HIVXnqUElw3cHbdP6hvqwoDG0qSlOk+OOwY+9umW+-e3NK32GvijJjDhpowN8pKdfZpvN4uoHnZEQHN5NDdd+x7z+LeLsE36IGDY9xBJWF6NzpZx5ik=.jpg", "desc": "Apartamento de 2 dormitórios próximo à praia no bairro Ocian - Praia Grande • Excelente oportunidade para quem busca conforto, praticidade e proximidade com o mar! Este apartamento conta com 72 m² de área…", "tier": "secondary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Agência da Praia Imóveis", "ref": "AP19550-KEIM", "neighborhood": "Vila Guilhermina", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 55.0, "price": 335000.0, "condo": 401.0, "iptu": 345.0, "updated_at": "2026-10-29", "url": "https://www.agenciadapraia.com.br/imovel/apartamento-praia-grande-1-quarto-55-m/AP19550-KEIM", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu3lj+uB14Rknl+YrcIa7sAOrjoud0MaGnWHPqbLM5+n0-8n7e9vQ4qsb1YnePHLy679ZH+cKCEJpYNl2Zjnqb7fQLSZeuhKmgEzqV5leGkdO7gEWzB1u9AqLB8T3z3gg1w+4Ce-FjQiPY5nXI0RDQPlLCdkx8QdQ8Bi1SUxy8h8d55m-oS7TO7S-K5+hxzlXFx5k9oa+Squ619jCLJU4Vr0lNm4L5VMZWe0S2-TJT-8+5wEDqv3JFhXchgzWgPAoc9j0QdxOm6MBiAnGGrJLuxq-x9LGjfCuZ0XTMFBs-Lua-vriOPyjSqv5OU65jp0Ms8+IG9haK5m2DHRAXGJybiId7FK4+OvGswCzIDnYuBAKChPH1Zw1.jpg", "desc": "Apartamento à venda no bairro Guilhermina Praia Grande/SP • O imóvel conta com 1 dormitório, sala, cozinha, área de serviço, 1 banheiro social e 1 vaga de garagem. • Diferenciais do prédio: • Elevador.…", "tier": "primary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Praialar Imóveis", "ref": "PL-3278", "neighborhood": "Vila Tupi", "tier": "primary", "bedrooms": 2, "suites": 1, "bathrooms": 2, "garages": 1, "area": 70.0, "price": 385000.0, "condo": 665.0, "iptu": 337.0, "updated_at": "2026-10-29", "url": "https://www.praialarimoveis.com.br/imoveis/-912RPg1-apartamento-cod-3278", "photo": "https://imobeal-api.onrender.com/wm/d1cb91ef1887d57f/eyJpIjoiYmY2ZWRhOWQtYmM0YS00ZWI0LWIwYWMtYjM3NzExMDk1MTAwL3B1YmxpYyIsInQiOiJwcmFpYWxhciIsInYiOiIwMzUwMDI0ZiJ9.jpg", "desc": "Apartamento 2 dormitórios (1 suíte) na Vila Tupi, 70 m² de área útil, varanda gourmet, elevador e 1 vaga de garagem.", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Praialar Imóveis", "ref": "PL-3275", "neighborhood": "Cidade Ocian", "tier": "secondary", "bedrooms": 2, "suites": 1, "bathrooms": 2, "garages": 1, "area": 72.0, "price": 385000.0, "condo": 465.0, "iptu": 182.0, "updated_at": "2026-10-29", "url": "https://www.praialarimoveis.com.br/imoveis/Db82WXC1-apartamento-cod-3275", "photo": "https://imobeal-api.onrender.com/wm/4133025cf7c80909/eyJpIjoiNGU2YTBkNmUtODg1ZC00ZmE3LTA2NjgtNDUwMjM0NmQzYzAwL3B1YmxpYyIsInQiOiJwcmFpYWxhciIsInYiOiIwMzUwMDI0ZiJ9.jpg", "desc": "Apartamento de 2 dormitórios (1 suíte) na Cidade Ocian com 72 m² de área útil, condomínio baixo (R$ 465/mês), IPTU enxuto (R$ 182/mês), elevador e 1 vaga de garagem.", "mirror_of": "Nova Casarão Imóveis (AP34795-NOW9 — R$ 395 mil)", "is_secondary_mirror": false}, {"agency": "Agência da Praia Imóveis", "ref": "AP18553-KEIM", "neighborhood": "Vila Guilhermina", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 64.07, "price": 390000.0, "condo": 651.0, "iptu": 290.86, "updated_at": "2026-10-29", "url": "https://www.agenciadapraia.com.br/imovel/apartamento-praia-grande-1-quarto-64-m/AP18553-KEIM", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu01bjcI-xhcZysVHXru7p3i7wYuW4tyiqkqVo8r8p7bH7vHyRdWGx6QjiI3UKUKz7KBIf8I2YmRIa8hfHE20daHZOEVXmGOJjUjzbaZMcWRagBkdkSUL+1apbJL93Vw63yGdC8ragAW7CaXIHWN8HMdHR9o47l9MqBG1U1ByqR9Q9JG2ozrBZrT0PpW61WIYQklkpNCiTqzwi82OZ5htFvpqLHoC91cXWaoQmvqIQKNz8k8NqufBERmHlELVhPYgYMf+HIVXnqUElw3cHbdP6hvqwoDG0qSlOk+OOwY+9umW+-e3NK32GvijJjDhpowN8pKdfZpvN4uoHnZEQHN5NDdd+x7z+LeLsE36IGDY9xBJWF6NzpZx5ik=.jpg", "desc": "Apartamento à venda com 1 dormitório amplo e sacada, 60 m² de área útil, ideal para morar ou investir. O imóvel possui sala para dois ambientes, cozinha funcional, banheiro social e área de serviço, com excelente…", "tier": "primary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Agência da Praia Imóveis", "ref": "AP20240-KEIM", "neighborhood": "Vila Tupi", "bedrooms": 2, "suites": 1, "bathrooms": 1, "garages": 1, "area": 76.0, "price": 335000.0, "condo": 763.0, "iptu": 377.0, "updated_at": "2026-10-27", "url": "https://www.agenciadapraia.com.br/imovel/apartamento-praia-grande-2-quartos-76-m/AP20240-KEIM", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu0E+4exg4xkYzeo1BJHipi+VgtyRyuWYkEux35L-oOvr--T6ct7067Ia8Kv1MEWBopZHXOA4HUlQe+pcHjq3Wd3bZ11-iQ69pHnOQJlUH1hv1iA-gidgyWKoccC1rHcL6Qe+WqryoXWOF47mXntOTbMNAdsz6EIJ9xa9SUxy8h8d55m-oS7TO7S-K5+hxzlXFx5k9oa+Squ619jCLJU4Vr0lNm4L5VMZWe0S2-TJT-8+5wEDqv3JFhXchgzWgPAoc9j0QdxOm6MBiAnGGrJLuxq-x9LGjfCuZ0XTMFBs-Lua-vriOPyjSqv5OU65jp0Ms8+IG9haK5m2DHRAXGJybiId7FK4+OvGswCzIDnYuBAKChPH1Zw1.jpg", "desc": "Apartamento à venda com 2 dormitórios (1 suíte), 76 m² de área útil e 1 vaga de garagem na Vila Tupi, a 250 metros do mar e próximo a mercados, escolas e comércios em geral.", "tier": "primary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Imigrantes Imóveis", "ref": "IMIG-5087", "neighborhood": "Vila Tupi", "tier": "primary", "bedrooms": 2, "suites": 1, "bathrooms": 2, "garages": 1, "area": 70.0, "price": 395000.0, "condo": 664.0, "iptu": 337.0, "updated_at": "2026-10-27", "url": "https://imigrantesimoveis.com.br/imovel/apartamento-a-venda-2-quartos-tupi-praia-grande-sp-70m2-id-5087", "photo": "https://cdn3.praedium.com.br/10897AwAFd7bFizSu7Tq/15268405773187/e4tlw3m2ywuwymq5zgmxzgu0_md.jpg", "desc": "Apartamento de 2 quartos (1 suíte) com 70 m² na Vila Tupi, elevador e 1 vaga de garagem.", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Agência da Praia Imóveis", "ref": "AP19722-KEIM", "neighborhood": "Cidade Ocian", "bedrooms": 2, "suites": 1, "bathrooms": 2, "garages": 1, "area": 70.0, "price": 395000.0, "condo": 664.0, "iptu": 336.72, "updated_at": "2026-10-26", "url": "https://www.agenciadapraia.com.br/imovel/apartamento-praia-grande-2-quartos-70-m/AP19722-KEIM", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtuxpp8fNT+jxlm5I4Q53nkzak9N6xvYizi0bJz7-I44H2+OP5Xd3z5NwD3JfCNwadk-BiYYQ4MWNOTPNGeQHFbo2LB1NSpReDgn3EbIJFcVdw2C1sjwpT1VCie6n13UBp4zivC+-Xsw+9VaL6GgFnRbMNAdIz7EIJ8RC9W0J8p0oF7Jq1qTLdaOenJpi9yWxNWAZ8vJq+TqjzwtiOK59nSeUyO3cb51URUaJf1-aKA+9jrwcLou-TCwSW3hrDkec3f8vtBcFKmqQDlRDFHrNO70+-woWRhaz5bUWOZlA+pLGc-fS5b-rwSfvzLCWKlZcH+diKf-5JJIS1HWdXV3hjJXwD5Re29rnZr1GrOHiZth5HFUHf1pV4qw==.jpg", "desc": "Apartamento à venda no bairro Ocian - Praia Grande/SP • Excelente apartamento disponível para venda no bairro Tupi, localizado no 1º andar, a apenas 50 metros da praia e próximo à Fonte Interativa da Tupi…", "tier": "secondary", "mirror_of": "Nova Casarão Imóveis (AP34515-NOW9)", "is_secondary_mirror": false}, {"agency": "Agência da Praia Imóveis", "ref": "AP0727-KEIM", "neighborhood": "Aviação", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 55.0, "price": 335000.0, "condo": 545.53, "iptu": 277.93, "updated_at": "2026-10-24", "url": "https://www.agenciadapraia.com.br/imovel/apartamento-praia-grande-1-quarto-55-m/AP0727-KEIM", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu0N-iN1Dyxdmw+tGWZ2BsgyM-aS-xPWlgxzM86PNsajdyNv8A-Xmk4AyyaL0PAemnqJbfsErCFBldcUqHhDtYYCMC1NvpWa7mnqRQ7ReWTYFwyAUnUZxn3qAQ5GQ+kQI8iK4D8jamy67Y6biO1MZPLMNAdIz7EIJ8RC9W0J8p0oF7Jq1qTLdaOenJpi9yWxNWAZ8vJq+TqjzwtiOK59nSeUyO3cb51URUaJf1-aKA+9jrwcLou-TCwSW3hrDkec3f8vtBcFKmqQDlRDFHrNO70+-woWRhaz5bUWOZlA+pLGc-fS5b-rwSfvzLCWKlZcH+diKf-5JJIS1HWdXV3hjJXwD5Re29rnZr1GrOHiZth5HFUHf1pV4qw==.jpg", "desc": "Apartamento amplo e bem ventilado, com 1 dormitório, sacada, sala para 2 ambientes, cozinha espaçosa e área de serviço. • O imóvel é semimobiliado e conta com 1 vaga de garagem rotativa. O prédio está localizado…", "tier": "secondary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Agência da Praia Imóveis", "ref": "AP19675-KEIM", "neighborhood": "Vila Guilhermina", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 69.02, "price": 355000.0, "condo": 537.85, "iptu": 307.39, "updated_at": "2026-10-24", "url": "https://www.agenciadapraia.com.br/imovel/apartamento-praia-grande-1-quarto-69-m/AP19675-KEIM", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtuxln+sh05xQ3u5UiZ5yfgAbfwqaMzNmSknus9c7v74PS9pr1dsHT9Lp61YnWMgT1mIl6A8A-AVlbY-UrdBr1drXcFWBJsR2CnH7UYolqbVRtxlEClAcK83y3A7e32WASizHgTv33sDCHfqTZB18ZHrMNAdIz7EIJ8RC9W0J8p0oF7Jq1qTLdaOenJpi9yWxNWAZ8vJq+TqjzwtiOK59nSeUyO3cb51URUaJf1-aKA+9jrwcLou-TCwSW3hrDkec3f8vtBcFKmqQDlRDFHrNO70+-woWRhaz5bUWOZlA+pLGc-fS5b-rwSfvzLCWKlZcH+diKf-5JJIS1HWdXV3hjJXwD5Re29rnZr1GrOHiZth5HFUHf1pV4qw==.jpg", "desc": "Apartamento estilo Garden de 1 dormitório à venda na Vila Guilhermina (69,02 m² úteis), com amplo terraço privativo, elevador e 1 vaga de garagem a poucos metros do comércio.", "tier": "primary", "mirror_of": "Plaza Imóveis (AP8028-PLA)", "is_secondary_mirror": false}, {"agency": "Nova Casarão Imóveis", "ref": "AP9179-NOW9", "neighborhood": "Vila Tupi", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 55.0, "price": 315000.0, "condo": 380.0, "iptu": 250.0, "updated_at": "2026-10-22", "url": "https://www.novacasarao.com.br/imovel/apartamento-praia-grande-1-quarto-55-m/AP9179-NOW9", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu2xX3NRj2QcHmZoHfL6evBaOxtyo1ebGlWiH5I3tsa7f1+D-a8zlzZFgyfHzK3Kwt7J7H-9+EVBoRvdWYgbzeqWtMH1RpCeOmln2cL0XZzBT5zATrTNx6VSnB6Sj9wAHnjiYUq-4kjOsUITmJAFWKLMNAdIz7EIJ8RC9W0J8p0oF7Jq1qTLdaOenJpi9yWxNWAZ8vJq+TqjzwtiOK59nSeUyO3cb51URUaJf1-aKA+9jrwcLou-TCwSW3hrDkec3f8vtBcFLmqcEkxDLGOBJ40u9zoHEgPH5aUiFYQBr9L-O--OxP6-wH-ygdSWhgYsA99DcYstcMIvrQDQVACc5MDwUqVy2qvTa4hirbD-YuBAKChPH1Zw1.jpg", "desc": "Valor reduzido de R$ 325.000 para R$ 315.000 na Select Week: apartamento mobiliado a 150 m da praia na Vila Tupi, com 55 m² úteis, 1 dormitório, elevador, 1 vaga e condomínio de R$ 380/mês.", "tier": "primary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Plaza Imóveis", "ref": "AP8028-PLA", "neighborhood": "Vila Guilhermina", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 69.0, "price": 355000.0, "condo": 537.85, "iptu": 307.39, "updated_at": "2026-10-22", "url": "https://www.litoralplazaimoveis.com.br/imovel/apartamento-praia-grande-1-quarto-69-m/AP8028-PLA", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu19t9YpPywkgvJsGUIi7sAWn-Im2-+bI9X2I57DLo+PA9MHSeJj+zJEdy6yjHFv2jrR7QsZ6PG51ZdB9YgPEXricGU9v-Aun+B3BZL97RWxw3xsP1Qtz2Gm8QMWCrUMunhisEaLYtxa0RoDLJ2NTQPlLANk18QdW9hinR0InpwcW5JO3vSCAaKyyLIOvkiMYDwYu6oa6APevm5PPedV-GacxP3wP61NeW6wcmvuVAupw6QEZovrFTQeShQjQiOM3eYWuV9pMg6sDkAbLSeBL6h3tz9fH0vekbUzSYFRu9OvK-ae1P-b2BdWOU0fp0skz2rziDo8JdbmDICMXAlVCEgQy2F7ktPyL7AD5bSnYrhALDRPRzsM49G5wclU=.jpg", "desc": "Apartamento de 1 dormitório com terraço privativo estilo Garden, localizado a apenas 350 metros da praia! • O imóvel conta com sala para 2 ambientes, ampla sacada com espaço gourmet privativo, cozinha, banheiro…", "tier": "primary", "mirror_of": "Agência da Praia Imóveis (AP19675-KEIM)", "is_secondary_mirror": true}, {"agency": "Nova Casarão Imóveis", "ref": "AP9417-NOW9", "neighborhood": "Vila Tupi", "bedrooms": 2, "suites": 1, "bathrooms": 2, "garages": 1, "area": 76.0, "price": 380000.0, "condo": 786.0, "iptu": 355.0, "updated_at": "2026-10-22", "url": "https://www.novacasarao.com.br/imovel/apartamento-praia-grande-2-quartos-76-m/AP9417-NOW9", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu0Z+yd9OxDAvm8gXBrqOvXCD+JWM69qhs2+H9bn1hpWEx+31Q+v++dERioPVP1uDiIF0S+M6C2t2W8lmeD2xaISyAmF2hWSuphvnV7R8Q0Fo1jkSzTZn6B6VAqqO1GIrxz-gO7bCrzGxdaPcPGd5FrMNAdsz6EIJ9xa9SUxy8h8d55m-oS7TO7S-K5+hxzlXFx5k9oa+Squ619jCLJU4Vr0lNm4L5VMZWe0S2-TJT-8+5wEDqv3JFhXchgzWgPAoc9j0Qd1OmKQHiAfASbVHvxizw4fD0PCqak7UYAU88umY+fKybfz1TfigOWWtkpoCu5mVLs1OJMfrXzYXAzhnLjVRp1LkteiL+gDnZ3jWtl0VWAvE3NE=.jpg", "desc": "Apartamento de 2 quartos para venda no Bairro da TUPI. • Se você busca um lar que una conforto, modernidade e uma localização privilegiada, este apartamento é a escolha perfeita! • Descrição do Imóvel: • Sala ampla…", "tier": "primary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Nova Casarão Imóveis", "ref": "AP34951-NOW9", "neighborhood": "Vila Guilhermina", "bedrooms": 1, "suites": 1, "bathrooms": 2, "garages": 1, "area": 60.0, "price": 395000.0, "condo": 543.0, "iptu": 136.0, "updated_at": "2026-10-22", "url": "https://www.novacasarao.com.br/imovel/apartamento-praia-grande-1-quarto-60-m/AP34951-NOW9", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu0lDj-F-6w0lv-YYALyFuSCk0b-R7Y2X8Vio1YrY55Hd-9LbTOrzkqQDjajvDG794-I6ZP4mbG5HQsQkShC7X5rbOlMBsTqNp3TBF6JYanF-5DsJkg4N2EeGQKmb7XgNwgehJ-LqjwWRULjIGmF-MLMNAdsz6EIJ9xa9SUxy8h8d55m-oS7TO7S-K5+hxzlXFx5k9oa+Squ619jCLJU4Vr0lNm4L5VMZWe0S2-TJT-8+5wEDqv3JFhXchgzWgPAoc9j0Qd1OmKQHiAfASbVHvxizw4fD0PCqak7UYAU88umY+fKybfz1TfigOWWtkpoCu5mVLs1OJMfrXzYXAzhnLjVRp1LkteiL+gDnZ3jWtl0VWAvE3NE=.jpg", "desc": "EXCELENTE OPORTUNIDADE NA GUILHERMINA PRAIA GRANDE! • Você procura espaço, conforto e localização prática no litoral? Acabou de encontrar! • * Área útil: 60 m² (espaço raro para 1 dormitório!) • * Dormitório: 1 quarto…", "tier": "primary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Casa Paris Imóveis", "ref": "CP-19630", "neighborhood": "Vila Guilhermina", "tier": "primary", "bedrooms": 1, "suites": 1, "bathrooms": 1, "garages": 1, "area": 57.0, "price": 315000.0, "condo": 480.0, "iptu": 333.0, "updated_at": "2026-10-21", "url": "https://www.casaparisimoveis.com.br/imovel/apartamento-a-venda-guilhermina-praia-grande-sp/19630", "photo": "https://cdn.imoview.com.br/casaparis/Imoveis/19630/q6w6s-whatsapp-image-2026-10-21-at-131557-1792602337.jpeg?1792606701", "desc": "Excelente oportunidade na Vila Guilhermina com 57 m² úteis, 1 dormitório (suíte), semi-mobiliado, elevador e 1 vaga de garagem.", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Nova Casarão Imóveis", "ref": "AP0995-NOW9", "neighborhood": "Vila Tupi", "bedrooms": 1, "suites": 1, "bathrooms": 1, "garages": 1, "area": 59.8, "price": 320000.0, "condo": 576.0, "iptu": 299.0, "updated_at": "2026-10-21", "url": "https://www.novacasarao.com.br/imovel/apartamento-praia-grande-1-quarto-60-m/AP0995-NOW9", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu0xH1Mhe-xEQgMkjd+ezhRm9m7efyteYoF67+oP2mKze+tzBbtyHk6t637PNPmOQ6KM7d9kGAn5EO+prFS7dc6GFJSkIiQ6mmH7oaJVlW20L0AAXnA9w5FyaW5qPzEES5zqoGuzItzWKUfroWnpCBdZHR9ox7ltMqBezU0J8p0oF7Jq1qTLdaOenJpi9yWxNWAZ8vJq+TqjzwtiOK59nSeUyO3cb51URUaJf1-aKA+9jrwcLou-TCwSW3hrDkec3f8vtBcFLmqcEkxDLGOBJ40u9zoHEgPH5aUiFYQBr9L-O--OxP6-wH-ygdSWhgYsA99DcYstcMIvrQDQVACc5MDwUqVy2qvTa4hirbD-YuBAKChPH1Zw1.jpg", "desc": "1 Dormitório Sendo suíte + banheiro social : Amplos e arejados para garantir seu descanso. • Garagem: Um espaço seguro para o seu veículo. • Piscina: Aproveite momentos de lazer. • Bicicletário: Praticidade…", "tier": "primary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Plaza Imóveis", "ref": "AP21548-PLA", "neighborhood": "Vila Guilhermina", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 55.0, "price": 330000.0, "condo": 608.34, "iptu": 284.15, "updated_at": "2026-10-21", "url": "https://www.litoralplazaimoveis.com.br/imovel/apartamento-praia-grande-1-quarto-55-m/AP21548-PLA", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu0o-3c1B1zFlsOQfQOX7swPZ-96axsyl8kSN1J71r6yEiN2jX-f+2bI-y7GtHUWsl-9PaYQVCWFoVuV4eEHOUZuReWJuihuqr0ryQZdJamkO5S8qtzVKy0f8W5es8H8I5wevAermnSyVcKLCPnEDM+RHR9ox7ltMqBezU0J8p0oF7Jq1qTLdaOenJpi9yWxNWAZ8vJq+Tqi619jCLJU4Vr0lNm4L5VMZWe0S2-TJT-8+5wEDqv3JFhXchgzWgPAoc9j0Qd9BmKccnw-EErocuBu7xdLO16X6PUWEMgdu8uueq6e0afrxEK3sWEeLr9xRpq30DvB6YNj2PkNoFyQnAwch3THH9OvHpwClICqV5xBfWF+KzoBquSRleB8RoA==.jpg", "desc": "Apartamento mobiliado com 1 dormitório e 1 vaga na Guilhermina Praia Grande/SP. • Imóvel com 55m² de área útil, 74 m² de área total, distribuído em 1 dormitório, banheiro social, sala com bom espaço de convivência…", "tier": "primary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Plaza Imóveis", "ref": "AP20955-PLA", "neighborhood": "Vila Mirim", "bedrooms": 2, "suites": 0, "bathrooms": 1, "garages": 1, "area": 81.0, "price": 330000.0, "condo": 698.0, "iptu": 110.0, "updated_at": "2026-10-21", "url": "https://www.litoralplazaimoveis.com.br/imovel/apartamento-praia-grande-2-quartos-81-m/AP20955-PLA", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu21Z7Y5twko-vPUgebWRuiDd06Gy1o+9qU-K5ZzplKr025PQccnfk6c6jIDUCkyJmpcgfM5-KhpwOLZ4RhbIYdexHT1uryuplE6TF5tMHzNPw10UrgdInkayfaeK+243-CG0NPPVtHORbYbBEG1DP+xHR9ox7ltMqBezU0J8p0oF7Jq1qTLdaOenJpi9yWxNWAZ8vJq+Tqi619jCLJU4Vr0lNm4L5VMZWe0S2-TJT-8+5wEDqv3JFhXchgzWgPAoc9j0Qd9BmKccnw-EErocuBu7xdLO16X6PUWEMgdu8uueq6e0afrxEK3sWEeLr9xRpq30DvB6YNj2PkNoFyQnAwch3THH9OvHpwClICqV5xBfWF+KzoBquSRleB8RoA==.jpg", "desc": "Apartamento com 2 dormitórios para venda R$ 330 mil - Mirim - Praia Grande/SP. • Aceita proposta, aceita carro como parte de pagamento, aceita financiamento direto com o vendedor. • Entrada de R$ 150 mil e saldo…", "tier": "secondary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Nova Casarão Imóveis", "ref": "AP34949-NOW9", "neighborhood": "Boqueirão", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 68.0, "price": 340000.0, "condo": 608.0, "iptu": 219.0, "updated_at": "2026-10-21", "url": "https://www.novacasarao.com.br/imovel/apartamento-praia-grande-1-quarto-68-m/AP34949-NOW9", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu1k+zPww5E40ntQnW6em4yKs0NvL1eqA9wG81oHqgLPwi5imA8vb8oo824fTSUySj6Q4W4AJDE5oZeV5dSvEYt2fAFR-kxOdl1vBXrZeflVMxy8itRhb73WkGJP11lQvyyesJenImweKdf-JRER1SbMNAdsz6EIJ9xa9SUxy8h8d55m-oS7TO7S-K5+hxzlXFx5k9oa+Squ619jCLJU4Vr0lNm4L5VMZWe0S2-TJT-8+5wEDqv3JFhXchgzWgPAoc9j0Qd1OmKQHiAfASbVHvxizw4fD0PCqak7UYAU88umY+fKybfz1TfigOWWtkpoCu5mVLs1OJMfrXzYXAzhnLjVRp1LkteiL+gDnZ3jWtl0VWAvE3NE=.jpg", "desc": "Apartamento bem localizado no bairro Boqueirão. Para quem procura um apartamento amplo de 1 dormitório e próximo ao comércio local da Praia Grande, este á o imóvel certo! São 68 metros de área útil distribuídos…", "tier": "secondary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Nova Casarão Imóveis", "ref": "AP34601-NOW9", "neighborhood": "Vila Guilhermina", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 55.0, "price": 340000.0, "condo": 531.0, "iptu": 269.0, "updated_at": "2026-10-21", "url": "https://www.novacasarao.com.br/imovel/apartamento-praia-grande-1-quarto-55-m/AP34601-NOW9", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu2s53+V13Q05oNoFcueYuSWD17ue5MfGp2ST2J-7g5zn5eKjBcLn650j97LhL3uz7K1HW-F2Mm5AadAidEbqfZXdHSdmggGwlmfnU6FLaFpNji0tqiVa40OaWYSrzmwQ2RamLqzS7xmScPrcRHdSDqNHR9ox7ltMqBezU0J8p0oF7Jq1qTLdaOenJpi9yWxNWAZ8vJq+TqjzwtiOK59nSeUyO3cb51URUaJf1-aKA+9jrwcLou-TCwSW3hrDkec3f8vtBcFLmqcEkxDLGOBJ40u9zoHEgPH5aUiFYQBr9L-O--OxP6-wH-ygdSWhgYsA99DcYstcMIvrQDQVACc5MDwUqVy2qvTa4hirbD-YuBAKChPH1Zw1.jpg", "desc": "IMÓVEL COM REDUÇÃO DE VALOR PARA O SELECT WEEK DE R$ 350 MIL PARA R$ 340 MIL.. • 150m da Praia e Prontinho para Usar: 1 Dormitório Mobiliado com Sacada na Guilhermina! Se você busca um apartamento aconchegante…", "tier": "primary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Agência da Praia Imóveis", "ref": "AP19942-KEIM", "neighborhood": "Vila Guilhermina", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 59.0, "price": 340000.0, "condo": 531.0, "iptu": 343.0, "updated_at": "2026-10-21", "url": "https://www.agenciadapraia.com.br/imovel/apartamento-praia-grande-1-quarto-59-m/AP19942-KEIM", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtuwJYwohS-xcmiOoXYef7uAiE1Z+L7NqZ-V2r0YL6h5Lx+93IbOWOx4li77-aSGSe9qtKF+B9EVpZbtAlejK7db+JB39YhAmDmmnyEZlaSmcE+CZppz1J-2zjV5eF9m4-ngucCMHvl2ucE6XZAgFRGvtHR9o47l9MqBG1U1ByqR9Q9JG2ozrBZrT0PpW61WIYQklkpNCiTqzwi82OZ5htFvpqLHoC91cXWaoQmvqIQKNz8k8NqufBERmHlELVhPYgYMf+HIVXnqUElw3cHbdP6hvqwoDG0qSlOk+OOwY+9umW+-e3NK32GvijJjDhpowN8pKdfZpvN4uoHnZEQHN5NDdd+x7z+LeLsE36IGDY9xBJWF6NzpZx5ik=.jpg", "desc": "APARTAMENTO À VENDA A 100 METROS DA PRAIA! • Já imaginou morar ou investir na Vila Guilhermina, em Praia Grande, pertinho do mar e com toda a praticidade que você precisa? • Apartamento com 59 m², 1 dormitório…", "tier": "primary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Plaza Imóveis", "ref": "AP18132-PLA", "neighborhood": "Aviação", "bedrooms": 1, "suites": 1, "bathrooms": 2, "garages": 1, "area": 64.2, "price": 371000.0, "condo": 650.0, "iptu": 350.0, "updated_at": "2026-10-21", "url": "https://www.litoralplazaimoveis.com.br/imovel/apartamento-praia-grande-1-quarto-64-m/AP18132-PLA", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu3lX39Fy5j0Umc89R+Oj5w6h7N+4x96nm0SHw6TtjoGK0d2hQ8j-1rk68rzfSASF7p9Dd-kVL1xjQexlFSLJToyhBVwIsRCVuUz-cKEdfXVH7w07sj5xlFa2XpiN72NggTmZJ8HKphycYY+2HQxAHrMNAdsz6EIJ9xa9SUxy8h8d55m-oS7TO7S-K5+hxzlXFx5k9oa+SuKv15TFJsonDqooL34J41sRFqAe2beFX6J24QkLuOfUB1+EkBnHl+8kYMGwX9dMmLwLlwjKE+Ac7x64kI2UhPP+Z0+HZwA6prnMrffkOP36HLSNW0+DxctTxrH5Fesed9qVKEsAACZUFQAlyiO6qvXO4g6rcjWJtghHFEbfwI4npnZ9dRhc.jpg", "desc": "Apartamento de 1 suíte com lavabo no bairro Aviação, em Praia Grande. • O imóvel possui 64m² de área útil bem distribuídos em 1 suíte, 1 lavabo, sala ampla para 2 ambientes, varanda gourmet, cozinha planejada, área…", "tier": "secondary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Plaza Imóveis", "ref": "AP18657-PLA", "neighborhood": "Vila Tupi", "bedrooms": 2, "suites": 0, "bathrooms": 1, "garages": 1, "area": 77.8, "price": 395000.0, "condo": 660.0, "iptu": 174.0, "updated_at": "2026-10-21", "url": "https://www.litoralplazaimoveis.com.br/imovel/apartamento-praia-grande-2-quartos-78-m/AP18657-PLA", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu25jlcpI0TYjzfEJDZrktw-X0N+J+o63j3qo6oLOnYLLiPzYDZvx7rJg9K-SKAOyr6xgV815Dkl4O7FjZx-yBYejY3dKqj2rmVThZKdtQ1JM5yxus0ZIw3u2TL+L0Ewi0R69Dujepgu7ZqXGClpBGrMNAdsz6EIJ9xa9SUxy8h8d55m-oS7TO7S-K5+hxzlXFx5k9oa+SuKv15TFJsonDqooL34J41sRFqAe2beFX6J24QkLuOfUB1+EkBnHl+8kYMGwX9dMmLwLlwjKE+Ac7x64kI2UhPP+Z0+HZwA6prnMrffkOP36HLSNW0+DxctTxrH5Fesed9qVKEsAACZUFQAlyiO6qvXO4g6rcjWJtghHFEbfwI4npnZ9dRhc.jpg", "desc": "Apartamento mobiliado com vista para o mar à venda na Vila Tupi, com 77,80 m² de área útil, 2 dormitórios, ambientes amplos e bem distribuídos, elevador e 1 vaga de garagem.", "tier": "primary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Plaza Imóveis", "ref": "AP21128-PLA", "neighborhood": "Vila Guilhermina", "bedrooms": 2, "suites": 0, "bathrooms": 1, "garages": 1, "area": 72.0, "price": 399000.0, "condo": 790.0, "iptu": 450.0, "updated_at": "2026-10-21", "url": "https://www.litoralplazaimoveis.com.br/imovel/apartamento-praia-grande-2-quartos-72-m/AP21128-PLA", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu1ZZ8cpo5gcZrPcERZy0lRCZ6YKrwuilpXPO-qP9gZj5he6gdvXBlLIH2pb5AFSWjr9dSOd8CmRyau0nZj-sVL6gNmNsqiW2iXvVH4BJBjdn5QcTvhIKy1agQbaX3VAM0BOeGrbHlAOyaqv7M0BERbMNAdsz6EIJ9xa9SUxy8h8d55m-oS7TO7S-K5+hxzlXFx5k9oa+SuKv15TFJsonDqooL34J41sRFqAe2beFX6J24QkLuOfUB1+EkBnHl+8kYMGwX9dMmLwLlwjKE+Ac7x64kI2UhPP+Z0+HZwA6prnMrffkOP36HLSNW0+DxctTxrH5Fesed9qVKEsAACZUFQAlyiO6qvXO4g6rcjWJtghHFEbfwI4npnZ9dRhc.jpg", "desc": "Apartamento na Guilhermina, em Praia Grande. • O imóvel possui 72m² de área útil, distribuído em 2 dormitórios, 1 banheiro, sala, sacada gourmet, cozinha, área de serviço e 1 vaga de garagem coletiva. • O edifício…", "tier": "primary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Plaza Imóveis", "ref": "AP3035-PLA", "neighborhood": "Aviação", "bedrooms": 2, "suites": 0, "bathrooms": 1, "garages": 1, "area": 70.0, "price": 399900.0, "condo": 494.0, "iptu": 276.42, "updated_at": "2026-10-21", "url": "https://www.litoralplazaimoveis.com.br/imovel/apartamento-praia-grande-2-quartos-70-m/AP3035-PLA", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu2RL7dVU1hlinvsdXYHkjBO31IGu947DqFSZxKzWvZHr-pvWcf-k2qcT0bHSKVKSnvJkF+QgKVxOXM5mZTvFRpqeASRVhweji33sYbFKYDIQ9lBuwQ5u3XmnDIKGxkU3ihyvW97at3KXRvjIUFllQPlLANk18QdW9hinR0InpwcW5JO3vSCAaKyyLIOvkiMYDwYu6oa6APevm5PPedV-GacxP3wP61NeW6wcmvuVAupw6QEZovrFTQeShQjQiOM3eYWuV9pMg6sDkAbLSeBL6h3tz9fH0vekbUzSYFRu9OvK-ae1P-b2BdWOU0fp0skz2rziDo8JdbmDICMXAlVCEgQy2F7ktPyL7AD5bSnYrhALDRPRzsM49G5wclU=.jpg", "desc": "Apartamento com vista livre na Aviação, com 70 m² de área útil bem distribuídos em 2 dormitórios, banheiro social, sala para 2 ambientes, cozinha, área de serviço, elevador e 1 vaga de garagem rotativa.", "tier": "secondary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Nova Casarão Imóveis", "ref": "AP34938-NOW9", "neighborhood": "Cidade Ocian", "bedrooms": 1, "suites": 1, "bathrooms": 2, "garages": 1, "area": 58.44, "price": 355000.0, "condo": 591.0, "iptu": 380.0, "updated_at": "2026-10-20", "url": "https://www.novacasarao.com.br/imovel/apartamento-praia-grande-1-quarto-58-m/AP34938-NOW9", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtuxlHyNdR2RQHt8kydbavkySXx6Sdvvyk9mKyoq7Hgp6F8v3ya5eE5q0G07CoHE6ulI5VasAnPmNBTLEqbxP7UN6jJ2Nfmwm1qn-KF+NNTGhF6AEwmkYJ7QfhXrSc+wZq0huKLtOIlzbcHLy3LHlfTbMNAdsz6EIJ9xa9SUxy8h8d55m-oS7TO7S-K5+hxzlXFx5k9oa+Squ619jCLJU4Vr0lNm4L5VMZWe0S2-TJT-8+5wEDqv3JFhXchgzWgPAoc9j0Qd1OmKQHiAfASbVHvxizw4fD0PCqak7UYAU88umY+fKybfz1TfigOWWtkpoCu5mVLs1OJMfrXzYXAzhnLjVRp1LkteiL+gDnZ3jWtl0VWAvE3NE=.jpg", "desc": "SEU NOVO APARTAMENTO EM PRAIA GRANDE: CONFORTO, LAZER E SOFISTICAÇÃO! • Apartamento novo com 58,44 m² de área útil, perfeito para quem deseja conquistar seu imóvel na praia e desfrutar de mais qualidade de vida!…", "tier": "secondary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Nova Casarão Imóveis", "ref": "AP25851-NOW9", "neighborhood": "Vila Tupi", "bedrooms": 2, "suites": 0, "bathrooms": 1, "garages": 1, "area": 72.0, "price": 375000.0, "condo": 700.0, "iptu": 160.0, "updated_at": "2026-10-20", "url": "https://www.novacasarao.com.br/imovel/apartamento-praia-grande-2-quartos-72-m/AP25851-NOW9", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu0Ba1tZg4zE4megWXqG1gTGq052t5NqWjF+6yZncgrb3i8X5cs7+5dwajYXTV2mxtpB6QOR8Pnt8VvVEehPaYdehG1gAuWKygUTMYOQaezpP2jZouQdw1H+pRaGCp04HgzmhUcqElj+zXpK2WW5jRbMNAdsz6EIJ9xa9SUxy8h8d55m-oS7TO7S-K5+hxzlXFx5k9oa+Squ619jCLJU4Vr0lNm4L5VMZWe0S2-TJT-8+5wEDqv3JFhXchgzWgPAoc9j0Qd1OmKQHiAfASbVHvxizw4fD0PCqak7UYAU88umY+fKybfz1TfigOWWtkpoCu5mVLs1OJMfrXzYXAzhnLjVRp1LkteiL+gDnZ3jWtl0VWAvE3NE=.jpg", "desc": "Excelente apartamento com 72 m² e vista mar de todas as janelas, arejado, em andar alto e distribuído em 02 quartos, banheiro, sala para 02 ambientes cozinha e área de serviço. • Somente a 80 metros da praia…", "tier": "primary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Nova Casarão Imóveis", "ref": "AP34614-NOW9", "neighborhood": "Cidade Ocian", "bedrooms": 2, "suites": 1, "bathrooms": 2, "garages": 1, "area": 79.0, "price": 385000.0, "condo": 600.0, "iptu": 382.0, "updated_at": "2026-10-20", "url": "https://www.novacasarao.com.br/imovel/apartamento-praia-grande-2-quartos-79-m/AP34614-NOW9", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu3xd0Y9ExDYjifoSWIelgyqD85uK2vafhk+TxLPr+oSK9Mj6Qujj4t0lzbf0LXG3rpF7WPh5Dk12RMNQdATwb8KKOV8AuBCVqkzBeIZhGldp4gwJqSUV9ATpR7esynUJ1QOjN-z99DCCfbHdWXBuNLMNAdsz6EIJ9xa9SUxy8h8d55m-oS7TO7S-K5+hxzlXFx5k9oa+Squ619jCLJU4Vr0lNm4L5VMZWe0S2-TJT-8+5wEDqv3JFhXchgzWgPAoc9j0Qd1OmKQHiAfASbVHvxizw4fD0PCqak7UYAU88umY+fKybfz1TfigOWWtkpoCu5mVLs1OJMfrXzYXAzhnLjVRp1LkteiL+gDnZ3jWtl0VWAvE3NE=.jpg", "desc": "IMÓVEIS COM REDUÇÃO DE VALOR PARA O SELECT WEEK DE R$ 410 MIL, PARA R$ 385 MIL!!! • *Apartamento de 79 m² à venda no bairro Ocian, em Praia Grande* • Excelente oportunidade para quem busca conforto, praticidade…", "tier": "secondary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Nova Casarão Imóveis", "ref": "AP34795-NOW9", "neighborhood": "Cidade Ocian", "bedrooms": 2, "suites": 1, "bathrooms": 2, "garages": 1, "area": 72.0, "price": 395000.0, "condo": 462.97, "iptu": 182.43, "updated_at": "2026-10-20", "url": "https://www.novacasarao.com.br/imovel/apartamento-praia-grande-2-quartos-72-m/AP34795-NOW9", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu2d-yfF13SgxttclAYa9vSa5wYmx94+rr12TwKLL74Ts8cr0VsLs19oy04ytLVTziJ5lG+cVHRFnOsUgbEL3XNmiLXQNugfXpxqWU59UGjJo-R0dyRsJmgSZRJ2Asnstynz9F+6I8RfXbvnFUBlDRbMNAdsz6EIJ9xa9SUxy8h8d55m-oS7TO7S-K5+hxzlXFx5k9oa+Squ619jCLJU4Vr0lNm4L5VMZWe0S2-TJT-8+5wEDqv3JFhXchgzWgPAoc9j0Qd1OmKQHiAfASbVHvxizw4fD0PCqak7UYAU88umY+fKybfz1TfigOWWtkpoCu5mVLs1OJMfrXzYXAzhnLjVRp1LkteiL+gDnZ3jWtl0VWAvE3NE=.jpg", "desc": "Vende-se apartamento na Ocian Praia Grande/SP! • Apenas 100m da praia! • Ao lado do Centro da Ocian, com excelente localização e fácil acesso a comércios, mercados, restaurantes, farmácias e serviços. • 72m² de área…", "tier": "secondary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Casa Paris Imóveis", "ref": "CP-19587", "neighborhood": "Vila Tupi", "tier": "primary", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 56.0, "price": 340000.0, "condo": 700.0, "iptu": 390.0, "updated_at": "2026-10-19", "url": "https://www.casaparisimoveis.com.br/imovel/apartamento-a-venda-tupi-praia-grande-sp/19587", "photo": "https://cdn.imoview.com.br/casaparis/Imoveis/19587/h9d5m-batch-img-2840-1792445240.jpg?1792588792", "desc": "Apartamento na Vila Tupi com 56 m² de área útil, semi-mobiliado, edifício com elevador e 1 vaga de garagem.", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Casa Paris Imóveis", "ref": "CP-19568", "neighborhood": "Vila Tupi", "tier": "primary", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 55.0, "price": 360000.0, "condo": 445.0, "iptu": 262.0, "updated_at": "2026-10-19", "url": "https://www.casaparisimoveis.com.br/imovel/apartamento-a-venda-tupi-praia-grande-sp/19568", "photo": "https://cdn.imoview.com.br/casaparis/Imoveis/19568/f108a-img-9890-1792422961.jpg?1792442280", "desc": "Apartamento de 1 dormitório (55 m²) na Vila Tupi com baixo custo de condomínio (R$ 445), elevador e 1 vaga.", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Imigrantes Imóveis", "ref": "IMIG-5560", "neighborhood": "Aviação", "tier": "secondary", "bedrooms": 2, "suites": 1, "bathrooms": 2, "garages": 1, "area": 70.0, "price": 400000.0, "condo": 650.0, "iptu": 300.0, "updated_at": "2026-10-17", "url": "https://imigrantesimoveis.com.br/imovel/apartamento-a-venda-2-quartos-aviacao-praia-grande-sp-70m2-id-5560", "photo": "https://cdn3.praedium.com.br/10897AwAFd7bFizSu7Tq/2172280640297756/ld0rrtu2ywqzodjlzmjjzwix_md.jpg", "desc": "Apartamento de 2 dormitórios (1 suíte) com 70 m² na Aviação, elevador e 1 vaga de garagem.", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Nova Casarão Imóveis", "ref": "AP34919-NOW9", "neighborhood": "Vila Tupi", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 59.0, "price": 320000.0, "condo": 505.55, "iptu": 230.0, "updated_at": "2026-10-16", "url": "https://www.novacasarao.com.br/imovel/apartamento-praia-grande-1-quarto-59-m/AP34919-NOW9", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu19D1OVCzFJvvvAVTICdl3eVzo-F-Y6mqU+V6c+Trq7c1tPSXcHAyJgZ2JX2CXiToa5CT4YuL1FhZNtTchnbQICPJHtfkieWnUHrVIFtEkdu8ScSqyxp4kHjdsG+3H9v8nCSEOHmgAS+aZ64XHkADrMNAdsz6EIJ9xa9SUxy8h8d55m-oS7TO7S-K5+hxzlXFx5k9oa+Squ619jCLJU4Vr0lNm4L5VMZWe0S2-TJT-8+5wEDqv3JFhXchgzWgPAoc9j0Qd1OmKQHiAfASbVHvxizw4fD0PCqak7UYAU88umY+fKybfz1TfigOWWtkpoCu5mVLs1OJMfrXzYXAzhnLjVRp1LkteiL+gDnZ3jWtl0VWAvE3NE=.jpg", "desc": "Apartamento à venda na Vila Tupi • Sabe aquela vontade de ter seu apartamento na Praia Grande sem precisar esperar anos pela entrega de um lançamento? • Aqui você encontra um imóvel pronto, com planejados…", "tier": "primary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Agência da Praia Imóveis", "ref": "AP19774-KEIM", "neighborhood": "Aviação", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 64.0, "price": 350000.0, "condo": 630.52, "iptu": 342.53, "updated_at": "2026-10-16", "url": "https://www.agenciadapraia.com.br/imovel/apartamento-praia-grande-1-quarto-64-m/AP19774-KEIM", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu2VtytRKxTgRtsYFBb-llROXwIeuvObIjmm8oJDHtrrUxcTPcveC6twc+PCqHQe8nq80XsF3HEJWVvdFHhm0f5uLGT1ejGWtgmLxU7pHf2BP4jAxywpc72S5XL2wzE4K1SH1N93ylCiXSIXrDE5eRbMNAdIz7EIJ8RC9W0J8p0oF7Jq1qTLdaOenJpi9yWxNWAZ8vJq+TqjzwtiOK59nSeUyO3cb51URUaJf1-aKA+9jrwcLou-TCwSW3hrDkec3f8vtBcFKmqQDlRDFHrNO70+-woWRhaz5bUWOZlA+pLGc-fS5b-rwSfvzLCWKlZcH+diKf-5JJIS1HWdXV3hjJXwD5Re29rnZr1GrOHiZth5HFUHf1pV4qw==.jpg", "desc": "Apartamento de 1 dormitório à venda, localizado a apenas 100 metros da praia, em excelente região, próximo a padarias, mercados, farmácias, postos de gasolina, escolas e diversos comércios e serviços. • O imóvel conta…", "tier": "secondary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Agência da Praia Imóveis", "ref": "AP20219-KEIM", "neighborhood": "Aviação", "bedrooms": 1, "suites": 1, "bathrooms": 2, "garages": 1, "area": 64.0, "price": 400000.0, "condo": 598.0, "iptu": 398.47, "updated_at": "2026-10-16", "url": "https://www.agenciadapraia.com.br/imovel/apartamento-praia-grande-1-quarto-64-m/AP20219-KEIM", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu0JtjPAz6iBvspRGV+Tu5g6X86+M6vfJqnWR6ankuu2G5O3WZsfsmK0Yw7KoOH6h7YROSNMFL2xQWudwHDavcryhDGl+kheN42XQa+NeTlNo5xs+zi5uzmPhDJasz2I71mSDJ-HCnROmSKzMLG5MHL1HR9o47l9MqBG1U1ByqR9Q9JG2ozrBZrT0PpW61WIYQklkpNCiTqzwi82OZ5htFvpqLHoC91cXWaoQmvqIQKNz8k8NqufBERmHlELVhPYgYMf+HIVXnqUElw3cHbdP6hvqwoDG0qSlOk+OOwY+9umW+-e3NK32GvijJjDhpowN8pKdfZpvN4uoHnZEQHN5NDdd+x7z+LeLsE36IGDY9xBJWF6NzpZx5ik=.jpg", "desc": "Apartamento de 1 dormitório com suíte, varanda gourmet e 64 m², uma metragem realmente diferenciada para esse tipo de imóvel. • A planta é ampla e bem distribuída, oferecendo conforto e espaço que normalmente não…", "tier": "secondary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Agência da Praia Imóveis", "ref": "AP20243-KEIM", "neighborhood": "Vila Guilhermina", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 57.0, "price": 361000.0, "condo": 440.0, "iptu": 272.64, "updated_at": "2026-10-13", "url": "https://www.agenciadapraia.com.br/imovel/apartamento-praia-grande-1-quarto-57-m/AP20243-KEIM", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu11CjpdH-SgVqZIUXKWfuBeo+d2N19STtX+c+sn9renZ583xAPXj6dwT3-f3I3+Ai7ZCXNx+b2dZZ-FAdzDzcYmbO0pTpGHcvGzcd7pnc1tL+lEzvlJV9naCZMiMyVA5wSuBUPTAoBS3EKvtLl9lQPlLANk18QdW9hinR0InpwcW5JO3vSCAaKyyLIOvkiMYDwYu6oa6SeKv15TFJsonDqooL34J41sRFqAe2beFX6J24QkLuOfUB1+EkBnHl+8kYMGwXNhPnKEckQrCG7cf7hq6kIXO0aekZxiFMAI09r2Z8KG1Pq+gGqHsUn2ihJZGpM3sPctVNpqnH2NLRnM5MDwUqVy2qvTa4hirYXjWtl0VWAvE3NE=.jpg", "desc": "Apartamento á venda com 1 Dormitório e 1 Vaga na Guilhermina - Praia Grande/SP. • Apartamento com 1 dormitório, ampla sala em L com dois ambientes e sacada, cozinha com armários planejados, área de serviço, 1 banheiro…", "tier": "primary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Nova Casarão Imóveis", "ref": "AP0561-NOW9", "neighborhood": "Aviação", "bedrooms": 1, "suites": 1, "bathrooms": 2, "garages": 1, "area": 58.0, "price": 400000.0, "condo": 638.0, "iptu": 368.87, "updated_at": "2026-10-10", "url": "https://www.novacasarao.com.br/imovel/apartamento-praia-grande-1-quarto-58-m/AP0561-NOW9", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu2hjgNMy5AhuvPY-cYPhtwO755ivy86WiRmW87bN46iKz8XcfvD6-4s4-Ij4DU6ds7N4GvIkLUdEYc1la0D3AtyfMmILgSeqpWv6d5l9STMJ2T0KkRlWx1jiTYCNrgc28iz0F9-1lSPRQv-nE2d1QPlLANk18QdW9hinR0InpwcW5JO3vSCAaKyyLIOvkiMYDwYu6oa6SeKv15TFJsonDqooL34J41sRFqAe2beFX6J24QkLuOfUB1+EkBnHl+8kYMGwXdhMm6ccnwyRHLsb7Ba+xYCT0aOpbB-VZVI6pL+e+PHgPvmnSfjseWm+g5hO8tDZKN9aaMf0XTQUHGZ5J3BfqQD7qbmT4kzsIHbY+0JHQAjNkQ==.jpg", "desc": "APARTAMENTO 1 DORMITÓRIO COM SUÍTE NA AVIAÇÃO | PRAIA GRANDE • Seu apartamento na praia pode estar mais perto do que você imagina. • Se você procura um apartamento à venda na Aviação, em Praia Grande, com uma planta…", "tier": "secondary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Agência da Praia Imóveis", "ref": "AP19217-KEIM", "neighborhood": "Vila Tupi", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 60.0, "price": 360000.0, "condo": 510.0, "iptu": 340.0, "updated_at": "2026-10-07", "url": "https://www.agenciadapraia.com.br/imovel/apartamento-praia-grande-1-quarto-60-m/AP19217-KEIM", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu0B58f5cyk8AuMsWc4CzizPZ+Ke+-oinrk6f1Y3YsY+G2enlWsKbl6J667X8H3+rqfRSW855M2RiW94qQR7WXrqPeWYKhwGhr0vvdLl5XmMP8FsCnS0I-wq9apmopmMI0QaqGvDfmAucF6fAIVdDMr5HR9o47l9MqBG1U1ByqR9Q9JG2ozrBZrT0PpW61WIYQklkpNCiTqzwi82OZ5htFvpqLHoC91cXWaoQmvqIQKNz8k8NqufBERmHlELVhPYgYMf+HIVXnqUElw3cHbdP6hvqwoDG0qSlOk+OOwY+9umW+-e3NK32GvijJjDhpowN8pKdfZpvN4uoHnZEQHN5NDdd+x7z+LeLsE36IGDY9xBJWF6NzpZx5ik=.jpg", "desc": "Excelente apartamento no bairro tupi em praia grande . • Apartamento com um dormitórios , sala com uma sacada, cozinha, área de serviço e um w.c social , tendo uma vaga de garagem . • Prédio com lazer, piscina…", "tier": "primary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Nova Casarão Imóveis", "ref": "AP34861-NOW9", "neighborhood": "Aviação", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 55.0, "price": 335000.0, "condo": 545.0, "iptu": 277.0, "updated_at": "2026-10-06", "url": "https://www.novacasarao.com.br/imovel/apartamento-praia-grande-1-quarto-55-m/AP34861-NOW9", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu1c-gfhR2RYuws07Raehhg+1wNqWxfPAvkeZxbb0p5-R+-rEZPfn0qwA2PTXNA6tuolnT-shahtGPcJRHz7kUNawNUpBlAGOq1zARaYeWE92+xEOkg9M9WrpYLX15l0S2ROYO-7h+xWeRoDsIlcASfhHR9o47l9MqBG1U1ByqR9Q9JG2ozrBZrT0PpW61WIYQklkpNCiTqzwi82OZ5htFvpqLHoC91cXWaoQmvqIQKNz8k8NqufBERmHlELVhPYgYMf+HIVXn6UHkAvcE7Ec7RfuwIzCh6H4OkuDMAFuo7mYqfWwPP2jGq6kdWnhjZgR9ZyVK4daIp+nQCsXAiQmbiId7FK4+OvGswCzIDSfth5HFUHf1pV4qw==.jpg", "desc": "Apartamento à Venda na Aviação Praia Grande/SP. • Excelente oportunidade para quem busca conforto, praticidade e morar perto da praia. • Apartamento com 55m² de área útil, o apartamento fica mobiliado. • O imóvel…", "tier": "secondary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Agência da Praia Imóveis", "ref": "AP20030-KEIM", "neighborhood": "Vila Guilhermina", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 55.76, "price": 335000.0, "condo": 499.0, "iptu": 286.43, "updated_at": "2026-10-06", "url": "https://www.agenciadapraia.com.br/imovel/apartamento-praia-grande-1-quarto-56-m/AP20030-KEIM", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu31H+Y9K5Q0hztseTLmllw2l8diTwtaCm2HH4p6Hs+vK0N7vQsfB74Ad35b0FGyDsZBAdsMgI0FnQsRLTyK6cp6dNXtDmmLTvVfKcJR2Znty6Fx3kAgAmVG4asiy+0913Aa0AMHCkhe+UP-PRGtkOetHR9ox7ltMqBezU0J8p0oF7Jq1qTLdaOenJpi9yWxNWAZ8vJq+TqjzwtiOK59nSeUyO3cb51URUaJf1-aKA+9jrwcLou-TCwSW3hrDkec3f8vtBcFKmqQDlRDFHrNO70+-woWRhaz5bUWOZlA+pLGc-fS5b-rwSfvzLCWKlZcH+diKf-5JJIS1HWdXV3hjJXwD5Re29rnZr1GrOHiZth5HFUHf1pV4qw==.jpg", "desc": "APARTAMENTO À VENDA NO BAIRRO GUILHERMA . • Apresentamos um lindo imóvel de 55m² de área útil, que oferece conforto e praticidade para o seu dia a dia. O apartamento é composto por sala com 2 ambientes, proporcionando…", "tier": "primary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Nova Casarão Imóveis", "ref": "AP22713-NOW9", "neighborhood": "Aviação", "bedrooms": 1, "suites": 1, "bathrooms": 2, "garages": 2, "area": 60.0, "price": 360000.0, "condo": 715.0, "iptu": 336.0, "updated_at": "2026-10-06", "url": "https://www.novacasarao.com.br/imovel/apartamento-praia-grande-1-quarto-60-m/AP22713-NOW9", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu3tti95R1A8jqOYgTaS0mDm6+ovO++vIgEC6wsjxnerK1c-hDNzO84FlioP8JXKMqpRjYMw7Gh5yetR+bk3DGrqhHSh0gWLcqFTIU71XHmNEhwNvzg9C3Qu8c4SM938pyhiLGqvboSOnZoP4KmFwHMdHR9ox7ltMqBezU0J8p0oF7Jq1qTLdaOenJpi9yWxNWAZ8vJq+TqjzwtiOK59nSeUyO3cb51URUaJf1-aKA+9jrwcLou-TCwSW3hrDkec3f8vtBcFLmqcEkxDLGOBJ40u9zoHEgPH5aUiFYQBr9L-O--OxP6-wH-ygdSWhgYsA99DcYstcMIvrQDQVACc5MDwUqVy2qvTa4hirbD-YuBAKChPH1Zw1.jpg", "desc": "Vende-se apartamento na Aviação Praia Grande/SP! • Apenas 420m² da praia! • 60m² de área útil • Sala em dois ambientes com varanda • Cozinha • Área de serviço • 1 suíte com varanda • 2 vagas de garagem…", "tier": "secondary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Nova Casarão Imóveis", "ref": "AP29551-NOW9", "neighborhood": "Boqueirão", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 55.0, "price": 395000.0, "condo": 708.0, "iptu": 295.0, "updated_at": "2026-10-03", "url": "https://www.novacasarao.com.br/imovel/apartamento-praia-grande-1-quarto-55-m/AP29551-NOW9", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu1Zn0oIw3idnos4Ce7mksAW86drF+Ne7q0Gb5cj8reLlxP3VW-Xn75IV9LStKVX2j-5PROV6C21lWcdjfCv0eN3bImF-vRfXq2-GH+pXTGl89DBpzBhtyXm2Yrr8r1I75z3gW9HXuzGQcqLqBEUBRbMNAdsz6EIJ9xa9SUxy8h8d55m-oS7TO7S-K5+hxzlXFx5k9oa+Squ619jCLJU4Vr0lNm4L5VMZWe0S2-TJT-8+5wEDqv3JFhXchgzWgPAoc9j0Qd1OmKQHiAfASbVHvxizw4fD0PCqak7UYAU88umY+fKybfz1TfigOWWtkpoCu5mVLs1OJMfrXzYXAzhnLjVRp1LkteiL+gDnZ3jWtl0VWAvE3NE=.jpg", "desc": "ATENÇÂO: Apartamento mobiliado a venda ótima localização apenas 150 metros da Praia do Boqueirão um dos Bairros mais valorizados da cidade. • Apartamento de 1 dormitório amplo com ventilação e iluminação natural…", "tier": "secondary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Agência da Praia Imóveis", "ref": "AP1525-KEIM", "neighborhood": "Vila Tupi", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 65.0, "price": 330000.0, "condo": 627.0, "iptu": 310.0, "updated_at": "2026-10-01", "url": "https://www.agenciadapraia.com.br/imovel/apartamento-praia-grande-1-quarto-65-m/AP1525-KEIM", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu2J17dZi1zs8k+lEXLnh7GzY85ewxYfCnmCn5rzyoKna1d7+d-2B2b8Gy46vTELwgaJjQ-Z-YgVaYtF9YC6xRte4O1RJ-QmrulzoH7J4RHNL-yxjghhe7lSHZpiIxlBshieCKfjnphGuFo3eOmxETbMNAdIz7EIJ8RC9W0J8p0oF7Jq1qTLdaOenJpi9yWxNWAZ8vJq+TqjzwtiOK59nSeUyO3cb51URUaJf1-aKA+9jrwcLou-TCwSW3hrDkec3f8vtBcFKmqQDlRDFHrNO70+-woWRhaz5bUWOZlA+pLGc-fS5b-rwSfvzLCWKlZcH+diKf-5JJIS1HWdXV3hjJXwD5Re29rnZr1GrOHiZth5HFUHf1pV4qw==.jpg", "desc": "Apartamento à venda no bairro Vila Tupi, em Praia Grande, com ótima localização e excelente custo-benefício para quem busca conforto, praticidade e qualidade de vida no litoral. • O imóvel possui sala ampla…", "tier": "primary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Imigrantes Imóveis", "ref": "IMIG-5493", "neighborhood": "Aviação", "tier": "secondary", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 56.0, "price": 350000.0, "condo": 650.0, "iptu": 235.0, "updated_at": "2026-09-30", "url": "https://imigrantesimoveis.com.br/imovel/apartamento-a-venda-1-quarto-aviacao-praia-grande-sp-56m2-id-5493", "photo": "https://cdn3.praedium.com.br/10897AwAFd7bFizSu7Tq/30576931656412/duuddeo2ywjknjblmgvkotux_md.jpg", "desc": "Apartamento de 1 dormitório (56 m²) na Aviação, edifício com elevador e 1 vaga de garagem.", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Imigrantes Imóveis", "ref": "IMIG-5495", "neighborhood": "Vila Guilhermina", "tier": "primary", "bedrooms": 1, "suites": 1, "bathrooms": 1, "garages": 1, "area": 60.0, "price": 390000.0, "condo": 616.0, "iptu": 297.0, "updated_at": "2026-09-30", "url": "https://imigrantesimoveis.com.br/imovel/apartamento-a-venda-1-quarto-guilhermina-praia-grande-sp-60m2-id-5495", "photo": "https://cdn3.praedium.com.br/10897AwAFd7bFizSu7Tq/724043865084112/nxefn9o2ywjknjljmmyzn2rk_md.jpg", "desc": "Apartamento de 1 quarto (60 m²) na Vila Guilhermina com elevador, 1 vaga de garagem e excelente localização.", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Nova Casarão Imóveis", "ref": "AP33414-NOW9", "neighborhood": "Vila Tupi", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 60.0, "price": 378000.0, "condo": 605.0, "iptu": 360.0, "updated_at": "2026-09-29", "url": "https://www.novacasarao.com.br/imovel/apartamento-praia-grande-1-quarto-60-m/AP33414-NOW9", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu007ytBS4TxuksMdU4jguQWH0pSdy4mQoH685J6MlYvQ1Jn0Reruwt0BjK3CCHCDjPN7TMN6FUMoesJ-VSflRJ2FHWlA-GK0iWXGYYRCbzd5gAtjvxVA6Hq8YJS283ownnCbF++J7w+lTLrjLn1dMbtHR9ox7ltMqBezU0J8p0oF7Jq1qTLdaOenJpi9yWxNWAZ8vJq+TqjzwtiOK59nSeUyO3cb51URUaJf1-aKA+9jrwcLou-TCwSW3hrDkec3f8vtBcFLmqcEkxDLGOBJ40u9zoHEgPH5aUiFYQBr9L-O--OxP6-wH-ygdSWhgYsA99DcYstcMIvrQDQVACc5MDwUqVy2qvTa4hirbD-YuBAKChPH1Zw1.jpg", "desc": "Descrição do site: • Excelente oportunidade para quem busca espaço, conforto e ótima localização no litoral! • Com 60 m² de área útil, o apartamento possui ambientes amplos, bem distribuídos e com excelente ventilação…", "tier": "primary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Nova Casarão Imóveis", "ref": "AP34515-NOW9", "neighborhood": "Cidade Ocian", "bedrooms": 2, "suites": 1, "bathrooms": 2, "garages": 1, "area": 70.0, "price": 395000.0, "condo": 664.0, "iptu": 336.72, "updated_at": "2026-09-29", "url": "https://www.novacasarao.com.br/imovel/apartamento-praia-grande-2-quartos-70-m/AP34515-NOW9", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtux9N8Oo+1xwlz81BAIGv7QeX47Wy5cqTq2Gn-sjOlpby0ZKmecTwkq567qP8L1D34qQ-GPgJbVsjee4rQkbSW7utA0JsuAStg2vLfbdCaUBe-107ti8I5HCzereex0w-5BC4BtXC9yutfaLpPkNcMLMNAdsz6EIJ9xa9SUxy8h8d55m-oS7TO7S-K5+hxzlXFx5k9oa+Squ619jCLJU4Vr0lNm4L5VMZWe0S2-TJT-8+5wEDqv3JFhXchgzWgPAoc9j0Qd1OmKQHiAfASbVHvxizw4fD0PCqak7UYAU88umY+fKybfz1TfigOWWtkpoCu5mVLs1OJMfrXzYXAzhnLjVRp1LkteiL+gDnZ3jWtl0VWAvE3NE=.jpg", "desc": "Vende-se apartamento na divisa da Vila Tupi e Ocian Praia Grande/SP • Apenas 50m da praia! • Excelente localização, próximo aos principais comércios, mercados, padarias, farmácias e restaurantes da região.…", "tier": "secondary", "mirror_of": "Agência da Praia Imóveis (AP19722-KEIM)", "is_secondary_mirror": true}, {"agency": "Imobiliária Nova Kennedy", "ref": "NK-14885325", "neighborhood": "Cidade Ocian", "tier": "secondary", "bedrooms": 2, "suites": 1, "bathrooms": 2, "garages": 1, "area": 70.0, "price": 385000.0, "condo": 600.0, "iptu": 312.0, "updated_at": "2026-09-25", "url": "https://novakennedy.com.br/14885325-apartamento-em-praia-grande-bairro-ocian.html", "photo": "https://vault.imob.online/u0051/properties/photos/18015171/ClVAlUfAihj7z8fJfEnO4iJ2-023baec5-8420-4af9-93b0-9b4ec9be1980.jpg", "desc": "Apartamento de 2 dormitórios (1 suíte) com 70 m² úteis na Cidade Ocian, a 290 metros da praia, sala 2 ambientes, sacada com vista livre, elevadores social e de serviço, piscina e 1 vaga.", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Nova Casarão Imóveis", "ref": "AP11231-NOW9", "neighborhood": "Vila Tupi", "bedrooms": 2, "suites": 1, "bathrooms": 2, "garages": 1, "area": 85.0, "price": 390000.0, "condo": 760.0, "iptu": 432.0, "updated_at": "2026-09-24", "url": "https://www.novacasarao.com.br/imovel/apartamento-praia-grande-2-quartos-85-m/AP11231-NOW9", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu3A6gItyxU4BueAUQrTg4nas1b+W7u+b8RSfyIyI5ZyA98-TUuTmzqYtyYDzFnemobZXGt4jHmZ8XcNKQETrRp2EJGVQsmaT+0XBbJtAb2tHmggtiS1z616rWMC9xUxt-nGGIOHyihKld47eD1BgGL1HR9ox7ltMqBezU0J8p0oF7Jq1qTLdaOenJpi9yWxNWAZ8vJq+TqjzwtiOK59nSeUyO3cb51URUaJf1-aKA+9jrwcLou-TCwSW3hrDkec3f8vtBcFLmqcEkxDLGOBJ40u9zoHEgPH5aUiFYQBr9L-O--OxP6-wH-ygdSWhgYsA99DcYstcMIvrQDQVACc5MDwUqVy2qvTa4hirbD-YuBAKChPH1Zw1.jpg", "desc": "OPORTUNIDADE IMPERDÍVEL NA VILA TUPI! • Você já imaginou morar a apenas 120 metros da praia em um apartamento amplo e com excelente custo-benefício? • Vila Tupi Praia Grande/SP! • 85 m² de área útil…", "tier": "primary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Nova Casarão Imóveis", "ref": "AP34459-NOW9", "neighborhood": "Cidade Ocian", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 56.0, "price": 250000.0, "condo": 631.0, "iptu": 140.0, "updated_at": "2026-09-23", "url": "https://www.novacasarao.com.br/imovel/apartamento-praia-grande-1-quarto-56-m/AP34459-NOW9", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu0d-yo9u1Chiz9QXZLSSkHSZxb2lwdCFjFmYpY-Zsrbk29-zbdzZ6IQg46HrFwK0tPJAaIAdb2BkfaxNbDyzYJ+dHCJ+-BWWi3Xxb7t6ElN+318Zvglc6kOnRL6872IU-CeaJ+vfqym3XJ7aDX4DSbMNAdIz7EIJ8RC9W0J8p0oF7Jq1qTLdaOenJpi9yWxNWAZ8vJq+TqjzwtiOK59nSeUyO3cb51URUaJf1-aKA+9jrwcLou-TCwSW3hrDkec3f8vtBcFLmqcEkxDLGOBJ40u9zoHEgPH5aUiFYQBr9L-O--OxP6-wH-ygdSWhgYsA99DcYstcMIvrQDQVACc5MDwUqVy2qvTa4hirbD-YuBAKChPH1Zw1.jpg", "desc": "Apartamento no bairro Ocian, com boa metragem, localização estratégica e estrutura adequada para moradia ou investimento. São 56 m² de área útil, distribuídos em 1 dormitório, sala, cozinha, banheiro, área de serviço…", "tier": "secondary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Nova Casarão Imóveis", "ref": "AP34653-NOW9", "neighborhood": "Cidade Ocian", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 57.19, "price": 350000.0, "condo": 608.47, "iptu": 284.77, "updated_at": "2026-09-23", "url": "https://www.novacasarao.com.br/imovel/apartamento-praia-grande-1-quarto-57-m/AP34653-NOW9", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu3dg9sNU2TUxitg2Zpi5vDGJ8YeswvDHkB2r+Y-cv7fUx8LVXMb30KQy8KejCUa0s4s5d+ckBG4ndeZFWEPJeq64LllMvAmW-FXcE+t5T0BX8QoTzzR2-lCDTbXx3FUf5gKlL+uEqCCIVoTcUA13P-pHR9o47l9MqBG1U1ByqR9Q9JG2ozrBZrT0PpW61WIYQklkpNCiTqzwi82OZ5htFvpqLHoC91cXWaoQmvqIQKNz8k8NqufBERmHlELVhPYgYMf+HIVXn6UHkAvcE7Ec7RfuwIzCh6H4OkuDMAFuo7mYqfWwPP2jGq6kdWnhjZgR9ZyVK4daIp+nQCsXAiQmbiId7FK4+OvGswCzIDSfth5HFUHf1pV4qw==.jpg", "desc": "Apartamento de 1 dormitório à venda no bairro Ocian, em Praia Grande, com 57,19 m² de área útil e localizado a aproximadamente 200 metros da praia. • O imóvel está totalmente reformado e conta com mobília planejada…", "tier": "secondary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Nova Casarão Imóveis", "ref": "AP18485-NOW9", "neighborhood": "Vila Tupi", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 55.0, "price": 330000.0, "condo": 562.0, "iptu": 244.61, "updated_at": "2026-09-22", "url": "https://www.novacasarao.com.br/imovel/apartamento-praia-grande-1-quarto-55-m/AP18485-NOW9", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu31XjNxTxEw4vvEYc7qkjhWk1Z+Y49mjjWm608iTn5jKzO-WAMn6xoY0gaTvC3uLvqlSYd53ME1SR84hHDbEetqaZmdq8gCvngDGQb5EXjIO5hFrziZI-V+LAIWrp0Mggj6EAqj4hAPJT5vgK20NG7dHR9o47l9MqBG1U1ByqR9Q9JG2ozrBZrT0PpW61WIYQklkpNCiTqzwi82OZ5htFvpqLHoC91cXWaoQmvqIQKNz8k8NqufBERmHlELVhPYgYMf+HIVXn6UHkAvcE7Ec7RfuwIzCh6H4OkuDMAFuo7mYqfWwPP2jGq6kdWnhjZgR9ZyVK4daIp+nQCsXAiQmbiId7FK4+OvGswCzIDSfth5HFUHf1pV4qw==.jpg", "desc": "Apartamento à venda no bairro Tupi, em Praia Grande, ideal para quem procura praticidade, imóvel mobiliado, estrutura de lazer e ótima proximidade da praia. • Com 55 m² de área útil, o apartamento possui 1 dormitório…", "tier": "primary", "mirror_of": "Agência da Praia Imóveis (AP19986-KEIM)", "is_secondary_mirror": true}, {"agency": "Nova Casarão Imóveis", "ref": "AP12060-NOW9", "neighborhood": "Vila Guilhermina", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 69.0, "price": 365000.0, "condo": 537.85, "iptu": 307.39, "updated_at": "2026-09-22", "url": "https://www.novacasarao.com.br/imovel/apartamento-praia-grande-1-quarto-69-m/AP12060-NOW9", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu3lNwuo33A44isELWu+A5TS96YS72O+29nrP+6Ta56jxzP-tUILC9qoe14v8FgasjYR0bMJ4K2ZjP7dhegDnZqCOJmJ7gymnjVXrEZloWVAOwF8-sxl6yn6kT6eS6A87gSGrW9z9jCuxaY-7LX4ML71HR9ox7ltMqBezU0J8p0oF7Jq1qTLdaOenJpi9yWxNWAZ8vJq+TqjzwtiOK59nSeUyO3cb51URUaJf1-aKA+9jrwcLou-TCwSW3hrDkec3f8vtBcFLmqcEkxDLGOBJ40u9zoHEgPH5aUiFYQBr9L-O--OxP6-wH-ygdSWhgYsA99DcYstcMIvrQDQVACc5MDwUqVy2qvTa4hirbD-YuBAKChPH1Zw1.jpg", "desc": "As melhores opções de imóveis em Praia Grande você encontra aqui! • Apartamento Garden com ótima localização no bairro. • Contendo 01 dormitório, sala, sacada gourmet, cozinha, área de serviço, 1 banheiro social…", "tier": "primary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Casa Paris Imóveis", "ref": "CP-19289", "neighborhood": "Vila Tupi", "tier": "primary", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 56.0, "price": 370000.0, "condo": 484.78, "iptu": 390.45, "updated_at": "2026-09-22", "url": "https://www.casaparisimoveis.com.br/imovel/apartamento-a-venda-tupi-praia-grande-sp/19289", "photo": "https://cdn.imoview.com.br/casaparis/Imoveis/19289/qqpo7-whatsapp-image-2026-09-22-at-182200-1790112337.jpeg?1790166367", "desc": "Apartamento porteira fechada na Vila Tupi, 56 m² de área útil, 1 dormitório, elevador e 1 vaga de garagem.", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Nova Casarão Imóveis", "ref": "AP34762-NOW9", "neighborhood": "Aviação", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 55.0, "price": 352000.0, "condo": 474.0, "iptu": 300.0, "updated_at": "2026-09-21", "url": "https://www.novacasarao.com.br/imovel/apartamento-praia-grande-1-quarto-55-m/AP34762-NOW9", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu2Rh7eN09jsSy5BDcpavunje16+povy-iEaf5bfSo7KKicnOBsPskoEt3IXuKlinmIJGesJ+aHEgfuwkS0XtAqm8BSMMsySu-WXIaIR3Gk5i5hNonQ9+w3eDRMKO2Vto6TGHDazeuxfJF6e3B2cFPLMNAdsz6EIJ9xa9SUxy8h8d55m-oS7TO7S-K5+hxzlXFx5k9oa+Squ619jCLJU4Vr0lNm4L5VMZWe0S2-TJT-8+5wEDqv3JFhXchgzWgPAoc9j0Qd1OmKQHiAfASbVHvxizw4fD0PCqak7UYAU88umY+fKybfz1TfigOWWtkpoCu5mVLs1OJMfrXzYXAzhnLjVRp1LkteiL+gDnZ3jWtl0VWAvE3NE=.jpg", "desc": "Apartamento Mobiliado a 150 Metros da Praia Vila Aviação • Excelente oportunidade para quem busca conforto, praticidade e proximidade do mar! • Apartamento com 55 m² de área útil, muito bem distribuído, localizado…", "tier": "secondary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Agência da Praia Imóveis", "ref": "AP12661-KEIM", "neighborhood": "Aviação", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 55.0, "price": 295000.0, "condo": 650.0, "iptu": 170.0, "updated_at": "2026-09-19", "url": "https://www.agenciadapraia.com.br/imovel/apartamento-praia-grande-1-quarto-55-m/AP12661-KEIM", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu0V6-8NX7ytmtcAhDJaHniLf2YmKvNO+jUqI267WsLbq1-Pgc+Dj2oo4yp7-OEaGkqdFSvEQNm9kQsBrQSawXZ6LbUpaoDSBm2nOEqplfi9a0StosRAVzVqDBLOF8kMh6SX9C+mdr37XHZ3cOlplQPlLCdkx8QdQ8Bi1SUxy8h8d55m-oS7TO7S-K5+hxzlXFx5k9oa+Squ619jCLJU4Vr0lNm4L5VMZWe0S2-TJT-8+5wEDqv3JFhXchgzWgPAoc9j0QdxOm6MBiAnGGrJLuxq-x9LGjfCuZ0XTMFBs-Lua-vriOPyjSqv5OU65jp0Ms8+IG9haK5m2DHRAXGJybiId7FK4+OvGswCzIDnYuBAKChPH1Zw1.jpg", "desc": "Este charmoso apartamento conta com 1 dormitório espaçoso, sala iluminada e arejada, cozinha funcional, banheiro com box e área de serviço. • O prédio oferece diversas comodidades, incluindo 2 elevadores, portaria…", "tier": "secondary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Nova Casarão Imóveis", "ref": "AP32565-NOW9", "neighborhood": "Boqueirão", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 57.0, "price": 320000.0, "condo": 697.0, "iptu": 166.0, "updated_at": "2026-09-19", "url": "https://www.novacasarao.com.br/imovel/apartamento-praia-grande-1-quarto-57-m/AP32565-NOW9", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu35l3O5k-joZg48keu7kugCX+rKFyvum9Xmk1pTHs5HkiJLQefuD6oQw4JHtPxuiralcR8wLK05wXPlUXCPBdL3QI2psgBeF-1TSVr4cR1F77Qs2jhNClH63Taj9xQINngG4W9DBlRyJFOXXRGNjJMNHR9ox7ltMqBezU0J8p0oF7Jq1qTLdaOenJpi9yWxNWAZ8vJq+TqjzwtiOK59nSeUyO3cb51URUaJf1-aKA+9jrwcLou-TCwSW3hrDkec3f8vtBcFLmqcEkxDLGOBJ40u9zoHEgPH5aUiFYQBr9L-O--OxP6-wH-ygdSWhgYsA99DcYstcMIvrQDQVACc5MDwUqVy2qvTa4hirbD-YuBAKChPH1Zw1.jpg", "desc": "Excelente apartamento localizado no bairro Boqueirão com ventilação e iluminação natural, 1 Dormitório amplo, sala para dois ambientes, cozinha, área de serviço, 1 banheiro social com box, pia e armários e conta…", "tier": "secondary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Praialar Imóveis", "ref": "PL-3014", "neighborhood": "Vila Tupi", "tier": "primary", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 55.0, "price": 340000.0, "condo": 480.0, "iptu": 236.0, "updated_at": "2026-09-16", "url": "https://www.praialarimoveis.com.br/imoveis/xTwPwZ41-apartamento-cod-3014", "photo": "https://imobeal-api.onrender.com/wm/25f678b4783e102c/eyJpIjoiZmQ0ODAyODgtNzNlMi00ZDE2LTc4NWEtY2Q1MmRlMzEwNTAwL3B1YmxpYyIsInQiOiJwcmFpYWxhciIsInYiOiIwMzUwMDI0ZiJ9.jpg", "desc": "Apartamento de 1 dormitório na Vila Tupi, 55 m², lazer completo, elevador e 1 vaga de garagem.", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Agência da Praia Imóveis", "ref": "AP17570-KEIM", "neighborhood": "Vila Tupi", "bedrooms": 2, "suites": 1, "bathrooms": 2, "garages": 1, "area": 80.0, "price": 375000.0, "condo": 641.56, "iptu": 322.4, "updated_at": "2026-09-16", "url": "https://www.agenciadapraia.com.br/imovel/apartamento-praia-grande-2-quartos-80-m/AP17570-KEIM", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtux1KlYNhuEc+qJoTTJugsQaM0ajR+Iqhs0fJ+c6I4pyB7-vkQfjk9L4D8ajjM0HwqpxmGP4EOWBBfNFFWQH6AaO4O1JD-zOhhRuXcrhbbTpX414DwTtv9kK-W7qr2HEv-BO-DavIsRC9VIzBM05DKLMNAdIz7EIJ8RC9W0J8p0oF7Jq1qTLdaOenJpi9yWxNWAZ8vJq+TqjzwtiOK59nSeUyO3cb51URUaJf1-aKA+9jrwcLou-TCwSW3hrDkec3f8vtBcFKmqQDlRDFHrNO70+-woWRhaz5bUWOZlA+pLGc-fS5b-rwSfvzLCWKlZcH+diKf-5JJIS1HWdXV3hjJXwD5Re29rnZr1GrOHiZth5HFUHf1pV4qw==.jpg", "desc": "Apartamento à venda na Vila Tupi com excelente localização, planta ampla de 80 m² úteis, 2 dormitórios (sendo 1 suíte), sala em L para 2 ambientes, 2 banheiros, elevador e 1 vaga.", "tier": "primary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Nova Casarão Imóveis", "ref": "AP31398-NOW9", "neighborhood": "Vila Guilhermina", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 55.0, "price": 345000.0, "condo": 423.0, "iptu": 260.0, "updated_at": "2026-09-12", "url": "https://www.novacasarao.com.br/imovel/apartamento-praia-grande-1-quarto-55-m/AP31398-NOW9", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu25k7fJvwhYEudo3e7KPgSPChpSE68u7rmG31qzd56vE7segbe7F7qtv4PPcTXm2tbRBGdl6EmsmRLR7cgXzAqyKIVMUjhmMuGnAcLteElJZgihuok9flVTiGMCRrGkO1TuaW9-Fsi6Dd6bFMUNhTbMNAdsz6EIJ9xa9SUxy8h8d55m-oS7TO7S-K5+hxzlXFx5k9oa+Squ619jCLJU4Vr0lNm4L5VMZWe0S2-TJT-8+5wEDqv3JFhXchgzWgPAoc9j0Qd1OmKQHiAfASbVHvxizw4fD0PCqak7UYAU88umY+fKybfz1TfigOWWtkpoCu5mVLs1OJMfrXzYXAzhnLjVRp1LkteiL+gDnZ3jWtl0VWAvE3NE=.jpg", "desc": "Ótimo Apartamento para Venda no Bairro Guilhermina Apenas 300m da Praia! • Localização privilegiada! A poucos passos da praia, em uma região tranquila e bem estruturada. • Destaques do imóvel: • 55m² de área útil…", "tier": "primary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Nova Casarão Imóveis", "ref": "AP4057-NOW9", "neighborhood": "Aviação", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 56.0, "price": 375000.0, "condo": 600.0, "iptu": 275.0, "updated_at": "2026-09-12", "url": "https://www.novacasarao.com.br/imovel/apartamento-praia-grande-1-quarto-56-m/AP4057-NOW9", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu2RbyshfyDxngsYUbuT7uDSCw6OKwu6-t2nO5r+JuoGAi+L+QOHmkb9vgaLsQmmslP5nXt92ExB-XcgnRBCzQIyfHkBfn3yn-EffZuofSW4L3y0cti1883i9X8mI2GAVghy7CfPEtzyqR765PllOEsVHR9ox7ltMqBezU0J8p0oF7Jq1qTLdaOenJpi9yWxNWAZ8vJq+TqjzwtiOK59nSeUyO3cb51URUaJf1-aKA+9jrwcLou-TCwSW3hrDkec3f8vtBcFLmqcEkxDLGOBJ40u9zoHEgPH5aUiFYQBr9L-O--OxP6-wH-ygdSWhgYsA99DcYstcMIvrQDQVACc5MDwUqVy2qvTa4hirbD-YuBAKChPH1Zw1.jpg", "desc": "*Apartamento à Venda na Aviação Praia Grande/SP. • Excelente oportunidade para quem busca conforto, praticidade e uma bela vista para o mar. • Apartamento com 56m² de área útil, localizado em andar alto…", "tier": "secondary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Agência da Praia Imóveis", "ref": "AP20042-KEIM", "neighborhood": "Vila Guilhermina", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 58.0, "price": 280000.0, "condo": 700.0, "iptu": 120.0, "updated_at": "2026-09-11", "url": "https://www.agenciadapraia.com.br/imovel/apartamento-praia-grande-1-quarto-58-m/AP20042-KEIM", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu1Z9yOsw3TIevfYUQaO0kTLWj5Wl9Yq2tmus9Y3GoriLzOLPbOCP2aUfz5-dQ0SphK5uF+MdPnJUPOBqFQLEA5ikIWMIuxCWp1jPbaJUU0dXhwgplA4P7lT8Dcaz-nAV1Dn4BOnVpSe2QIDtPHkFMN9HR9o47l9MqBG1U1ByqR9Q9JG2ozrBZrT0PpW61WIYQklkpNCiTqzwi82OZ5htFvpqLHoC91cXWaoQmvqIQKNz8k8NqufBERmHlELVhPYgYMf+HIVXnqUElw3cHbdP6hvqwoDG0qSlOk+OOwY+9umW+-e3NK32GvijJjDhpowN8pKdfZpvN4uoHnZEQHN5NDdd+x7z+LeLsE36IGDY9xBJWF6NzpZx5ik=.jpg", "desc": "APARTAMENTO À VENDA VILA GUILHERMINA | PRAIA GRANDE • Imagine ter o mar praticamente na sua porta e, ao mesmo tempo, estar pertinho de tudo o que você precisa para viver com praticidade e conforto!…", "tier": "primary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Casa Paris Imóveis", "ref": "CP-19120", "neighborhood": "Vila Guilhermina", "tier": "primary", "bedrooms": 2, "suites": 1, "bathrooms": 2, "garages": 1, "area": 74.0, "price": 400000.0, "condo": 540.0, "iptu": 337.95, "updated_at": "2026-09-11", "url": "https://www.casaparisimoveis.com.br/imovel/apartamento-a-venda-guilhermina-praia-grande-sp/19120", "photo": "https://cdn.imoview.com.br/casaparis/Imoveis/19120/3sc9i-whatsapp-image-2026-09-11-at-155206-1789156665.jpeg?1793804158", "desc": "Amplo apartamento de 2 dormitórios (1 suíte) com 74 m² na Vila Guilhermina, condomínio de R$ 540/mês, elevador e 1 vaga de garagem.", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Nova Casarão Imóveis", "ref": "AP0927-NOW9", "neighborhood": "Aviação", "bedrooms": 1, "suites": 0, "bathrooms": 2, "garages": 1, "area": 62.0, "price": 300000.0, "condo": 768.0, "iptu": 310.0, "updated_at": "2026-09-10", "url": "https://www.novacasarao.com.br/imovel/apartamento-praia-grande-1-quarto-62-m/AP0927-NOW9", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtuxh3jsNLwhQPrPMfUbS54Dmc972s5PKAkkfT1MvN4K3C3unwXsnB9p5j0Y-JKADw7Zl3e+AkY3BTPrZofEPFbZ+AAyZS+SGGmn6TeKVGZGN01SYZky571EmrArayzWQy+3+iF6zIqRbTbf7NWUNaLLMNAdsz6EIJ9xa9SUxy8h8d55m-oS7TO7S-K5+hxzlXFx5k9oa+Squ619jCLJU4Vr0lNm4L5VMZWe0S2-TJT-8+5wEDqv3JFhXchgzWgPAoc9j0Qd1OmKQHiAfASbVHvxizw4fD0PCqak7UYAU88umY+fKybfz1TfigOWWtkpoCu5mVLs1OJMfrXzYXAzhnLjVRp1LkteiL+gDnZ3jWtl0VWAvE3NE=.jpg", "desc": "Apartamento de 1 dormitório, com 60 m² de área útil, localizado no bairro Aviação, a apenas 150 metros da praia. • O imóvel possui sacada com vista livre, sala ampla para dois ambientes, banheiro social, cozinha…", "tier": "secondary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Casa Paris Imóveis", "ref": "CP-19059", "neighborhood": "Vila Tupi", "tier": "primary", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 60.42, "price": 390000.0, "condo": 600.0, "iptu": 350.0, "updated_at": "2026-09-08", "url": "https://www.casaparisimoveis.com.br/imovel/apartamento-a-venda-tupi-praia-grande-sp/19059", "photo": "https://cdn.imoview.com.br/casaparis/Imoveis/19059/vbq6q-whatsapp-image-2026-09-07-at-101941-1788878769.jpeg?1788961384", "desc": "Apartamento de 60,42 m² na Vila Tupi, 1 dormitório, prédio com elevador e 1 vaga de garagem.", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Nova Casarão Imóveis", "ref": "AP34557-NOW9", "neighborhood": "Aviação", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 74.0, "price": 325000.0, "condo": 604.0, "iptu": 342.0, "updated_at": "2026-09-05", "url": "https://www.novacasarao.com.br/imovel/apartamento-praia-grande-1-quarto-74-m/AP34557-NOW9", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu0Jm7vE1+gsjn9UYfLzjmxi20tmy6dOTp2Ka0Yzfoo-s8efyY+TawqJl7vXiLgWNs4tiXuIMDmpBacl3RTzydbyNZEl6gRS0vx2IbedoQTRa1TATgQdaxWSSZpyJp1of3z21E-iDqy20dZz9IUNYOLMNAdIz7EIJ8RC9W0J8p0oF7Jq1qTLdaOenJpi9yWxNWAZ8vJq+TqjzwtiOK59nSeUyO3cb51URUaJf1-aKA+9jrwcLou-TCwSW3hrDkec3f8vtBcFLmqcEkxDLGOBJ40u9zoHEgPH5aUiFYQBr9L-O--OxP6-wH-ygdSWhgYsA99DcYstcMIvrQDQVACc5MDwUqVy2qvTa4hirbD-YuBAKChPH1Zw1.jpg", "desc": "O imóvel está localizado no bairro Aviação em Praia Grande. • Possui 74 metros quadrados. • * sala 2 ambientes, com sacada • * 1 dormitório • * cozinha grande • * 1 banheiro social • * vaga de garagem • Salão de jogos…", "tier": "secondary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Nova Casarão Imóveis", "ref": "AP34189-NOW9", "neighborhood": "Vila Guilhermina", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 61.0, "price": 330000.0, "condo": 500.0, "iptu": 286.0, "updated_at": "2026-09-05", "url": "https://www.novacasarao.com.br/imovel/apartamento-praia-grande-1-quarto-61-m/AP34189-NOW9", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu0426OM-6yc-18M9Wpu7vzCj39uM+PuQrhWy+7XHvJ2eycjPVZaFk6VijbzfT3+D9pJUSMwDF3hyX7lDZAL1R9qvIGJapGGOjBjnYpEeQVt8gBsPjiYOmWS3bJ6Fx3o71y6kLfn9tza3R57IMVleSbMNAdsz6EIJ9xa9SUxy8h8d55m-oS7TO7S-K5+hxzlXFx5k9oa+Squ619jCLJU4Vr0lNm4L5VMZWe0S2-TJT-8+5wEDqv3JFhXchgzWgPAoc9j0Qd1OmKQHiAfASbVHvxizw4fD0PCqak7UYAU88umY+fKybfz1TfigOWWtkpoCu5mVLs1OJMfrXzYXAzhnLjVRp1LkteiL+gDnZ3jWtl0VWAvE3NE=.jpg", "desc": "Apartamento com 1 Quarto na Guilhermina em Praia Grande/SP • Apartamento com 61m² de área útil bem distribuídos em quarto, sala ampla 2 ambientes com sacada, cozinha grande, área de serviço e 1 vaga na garagem. • Ótima…", "tier": "primary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Agência da Praia Imóveis", "ref": "AP19795-KEIM", "neighborhood": "Vila Guilhermina", "bedrooms": 1, "suites": 1, "bathrooms": 1, "garages": 1, "area": 61.0, "price": 375000.0, "condo": 600.0, "iptu": 280.0, "updated_at": "2026-08-31", "url": "https://www.agenciadapraia.com.br/imovel/apartamento-praia-grande-1-quarto-61-m/AP19795-KEIM", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtux1Kjs5E7z0Zw9gwAeLlnCLdgonEvdi6nmTGxK73vr7Qi8TkAfbfwdsFiZLMF2OVs6lVTNsJbxB7WsdmWDG3T9udPHJQsiaToGvOYKJcRDd8+wYgqBZgmwuEc6j86G8++Qa+M-6F9mujQ-jAUGVVErMNAdIz7EIJ8RC9W0J8p0oF7Jq1qTLdaOenJpi9yWxNWAZ8vJq+TqjzwtiOK59nSeUyO3cb51URUaJf1-aKA+9jrwcLou-TCwSW3hrDkec3f8vtBcFKmqQDlRDFHrNO70+-woWRhaz5bUWOZlA+pLGc-fS5b-rwSfvzLCWKlZcH+diKf-5JJIS1HWdXV3hjJXwD5Re29rnZr1GrOHiZth5HFUHf1pV4qw==.jpg", "desc": "Apartamento à Venda na Vila Guilhermina Praia Grande/SP • Seu apartamento no litoral com vista para o mar e a poucos metros da praia! • Excelente oportunidade para quem busca conforto, localização privilegiada…", "tier": "primary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Agência da Praia Imóveis", "ref": "AP19963-KEIM", "neighborhood": "Vila Guilhermina", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 55.0, "price": 359000.0, "condo": 437.21, "iptu": 237.52, "updated_at": "2026-08-29", "url": "https://www.agenciadapraia.com.br/imovel/apartamento-praia-grande-1-quarto-55-m/AP19963-KEIM", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtux9ZyvNc6y0ZovtJYoOyunOw3LfJ5d6rg2PO08-GsY7litvxZPfc7Idl7-P4TGWGqP9oTdotDHEpWMxwHgHJT4iKeXhRqWXJnB7rdZV+bVB+3yIbzz0Kw1ySbaqI9G8s8DiPIfnGiTeRFrDAJWtnDNpHR9ox7ltMqBezU0J8p0oF7Jq1qTLdaOenJpi9yWxNWAZ8vJq+TqjzwtiOK59nSeUyO3cb51URUaJf1-aKA+9jrwcLou-TCwSW3hrDkec3f8vtBcFKmqQDlRDFHrNO70+-woWRhaz5bUWOZlA+pLGc-fS5b-rwSfvzLCWKlZcH+diKf-5JJIS1HWdXV3hjJXwD5Re29rnZr1GrOHiZth5HFUHf1pV4qw==.jpg", "desc": "APARTAMENTO DE 1 DORMITÓRIO NA GUILHERMINA A 50 METROS DA PRAIA! • Centro da Guilhermina, pertinho da praia e da tradicional feirinha de artesanato. • 1 dormitório amplo • Sala para 2 ambientes com sacada • Área…", "tier": "primary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Nova Casarão Imóveis", "ref": "AP33456-NOW9", "neighborhood": "Vila Tupi", "bedrooms": 2, "suites": 1, "bathrooms": 2, "garages": 1, "area": 76.0, "price": 398000.0, "condo": 600.0, "iptu": 230.0, "updated_at": "2026-08-29", "url": "https://www.novacasarao.com.br/imovel/apartamento-praia-grande-2-quartos-76-m/AP33456-NOW9", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu2442clt+Rolq+cufI3mgySG14mx7tO9gUiWyKj6m53h0MjUbcD4wb4A8KvWCWD946BHHIR4HXF1afFaHwHre7qmB2lRqB2pr3zIUoJKYml7+QoRkiUB+x6Vf7yK2FFg3hm9OsPxqQWocJDgOVtQE+pHR9ox7ltMqBezU0J8p0oF7Jq1qTLdaOenJpi9yWxNWAZ8vJq+TqjzwtiOK59nSeUyO3cb51URUaJf1-aKA+9jrwcLou-TCwSW3hrDkec3f8vtBcFLmqcEkxDLGOBJ40u9zoHEgPH5aUiFYQBr9L-O--OxP6-wH-ygdSWhgYsA99DcYstcMIvrQDQVACc5MDwUqVy2qvTa4hirbD-YuBAKChPH1Zw1.jpg", "desc": "Apartamento à venda na Vila Tupi, a poucos metros da praia, com 76 m² úteis, 2 dormitórios (sendo 1 suíte), 2 banheiros, elevador, 1 vaga de garagem e baixo custo fixo mensal.", "tier": "primary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Agência da Praia Imóveis", "ref": "AP19893-KEIM", "neighborhood": "Boqueirão", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 80.0, "price": 350000.0, "condo": 500.0, "iptu": 287.0, "updated_at": "2026-08-26", "url": "https://www.agenciadapraia.com.br/imovel/apartamento-praia-grande-1-quarto-80-m/AP19893-KEIM", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu1x9iepBuzU4t9pAQrOnth6k-JiJ+IaGkBvMocj0s-bs5cjBB9-m1tkB6YOoMn2ikJZhFvp-L3tnIqwrWyGxbp2FFlJMiSeJo0TvV4F4YmwE2R0goTlv20eQVob82Hg29i6rDf3emhGLEJi5C3VNMLMNAdIz7EIJ8RC9W0J8p0oF7Jq1qTLdaOenJpi9yWxNWAZ8vJq+TqjzwtiOK59nSeUyO3cb51URUaJf1-aKA+9jrwcLou-TCwSW3hrDkec3f8vtBcFKmqQDlRDFHrNO70+-woWRhaz5bUWOZlA+pLGc-fS5b-rwSfvzLCWKlZcH+diKf-5JJIS1HWdXV3hjJXwD5Re29rnZr1GrOHiZth5HFUHf1pV4qw==.jpg", "desc": "Apartamento à venda no Boqueirão a apenas 200 metros da praia, com 80 m² de área útil, 1 dormitório amplo, sala para 2 ambientes, elevador e 1 vaga de garagem no centro comercial.", "tier": "secondary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Nova Casarão Imóveis", "ref": "AP14057-NOW9", "neighborhood": "Aviação", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 55.0, "price": 360000.0, "condo": 534.0, "iptu": 278.0, "updated_at": "2026-08-25", "url": "https://www.novacasarao.com.br/imovel/apartamento-praia-grande-1-quarto-55-m/AP14057-NOW9", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtuxdQ9utLwDYgy-YFTO6UlSS5htm95NeA9XWToqPRtJyC9-TzWfjOyNEw44rzMnuK6+tiG-U7aERcTbBARCXSRKDZPnRDrQOGmXnfEpxPQmkQxgVvsid0mnq2R52u5wYdghaoLKnisyetY7npREd-TbMNAdsz6EIJ9xa9SUxy8h8d55m-oS7TO7S-K5+hxzlXFx5k9oa+Squ619jCLJU4Vr0lNm4L5VMZWe0S2-TJT-8+5wEDqv3JFhXchgzWgPAoc9j0Qd1OmKQHiAfASbVHvxizw4fD0PCqak7UYAU88umY+fKybfz1TfigOWWtkpoCu5mVLs1OJMfrXzYXAzhnLjVRp1LkteiL+gDnZ3jWtl0VWAvE3NE=.jpg", "desc": "UM PEDACINHO DO PARAÍSO A POUCOS PASSOS DA PRAIA! • Imagine acordar, abrir a janela e ter o mar como parte da sua rotina • Esse apartamento é perfeito para quem busca praticidade, localização e qualidade de vida!…", "tier": "secondary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Nova Casarão Imóveis", "ref": "AP19659-NOW9", "neighborhood": "Vila Guilhermina", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 55.0, "price": 398000.0, "condo": 491.0, "iptu": 329.0, "updated_at": "2026-08-25", "url": "https://www.novacasarao.com.br/imovel/apartamento-praia-grande-1-quarto-55-m/AP19659-NOW9", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu3A31ehKxAonr8MpdbmjhBeI7t+L4MiW91av34HsleuAytikcevyl4FhyoP5DVOU6et0GNosD0BHOe92YxzTRZ2CISNmsXyhnUfcTLlmXjZPziQ-rExK5lnif5iA6EUB6iuOWtPKnRKRd7HAI1lxFc9HR9ox7ltMqBezU0J8p0oF7Jq1qTLdaOenJpi9yWxNWAZ8vJq+TqjzwtiOK59nSeUyO3cb51URUaJf1-aKA+9jrwcLou-TCwSW3hrDkec3f8vtBcFLmqcEkxDLGOBJ40u9zoHEgPH5aUiFYQBr9L-O--OxP6-wH-ygdSWhgYsA99DcYstcMIvrQDQVACc5MDwUqVy2qvTa4hirbD-YuBAKChPH1Zw1.jpg", "desc": "More no apartamento certo para a sua família e torne todos os dias inesquecíveis! • Este apartamento está muito bem localizado no bairro Vila Guilhermina, próximo ao comércio local. É composto por 55 m² de área útil…", "tier": "primary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Nova Casarão Imóveis", "ref": "AP31841-NOW9", "neighborhood": "Boqueirão", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 60.0, "price": 362000.0, "condo": 678.0, "iptu": 287.0, "updated_at": "2026-08-21", "url": "https://www.novacasarao.com.br/imovel/apartamento-praia-grande-1-quarto-60-m/AP31841-NOW9", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu11i9vZs104jt9pDTqaFsSXd09WK0Mq+kXi2xY-whJ7f6JnVUuff65tjy778O1GwuvZ7S84ONHhWTfRoQiXncNvQAn1-mSLQm2rsaokddEt81jAAky9i9kriYJuH3A8XwByqOu73gTO8cIG3B20BTbMNAdsz6EIJ9xa9SUxy8h8d55m-oS7TO7S-K5+hxzlXFx5k9oa+Squ619jCLJU4Vr0lNm4L5VMZWe0S2-TJT-8+5wEDqv3JFhXchgzWgPAoc9j0Qd1OmKQHiAfASbVHvxizw4fD0PCqak7UYAU88umY+fKybfz1TfigOWWtkpoCu5mVLs1OJMfrXzYXAzhnLjVRp1LkteiL+gDnZ3jWtl0VWAvE3NE=.jpg", "desc": "*Venda de Apartamento Mobiliado no Coração do Boqueirão Praia Grande/SP A • 200 Metros da Praia* • Se você procura conforto, praticidade e localização privilegiada, essa é a • oportunidade ideal! Localizado no coração…", "tier": "secondary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Agência da Praia Imóveis", "ref": "AP16145-KEIM", "neighborhood": "Vila Mirim", "bedrooms": 2, "suites": 1, "bathrooms": 1, "garages": 1, "area": 70.0, "price": 336000.0, "condo": 622.0, "iptu": 187.0, "updated_at": "2026-08-20", "url": "https://www.agenciadapraia.com.br/imovel/apartamento-praia-grande-2-quartos-70-m/AP16145-KEIM", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu1lXy-hM9hs5ue4LDebvrTfczJ+358eu9nqwyMzfpIPf8PLaUcePwqphjPHsHW6J9oFqe9gDN2J6OM4qRCXbcsKabGR0kx6OglXkSoliHkNzgVk4mT5M5mmOf8Se+AY3-w+SGcHHlAmtT4vlJmYHOLMNAdIz7EIJ8RC9W0J8p0oF7Jq1qTLdaOenJpi9yWxNWAZ8vJq+TqjzwtiOK59nSeUyO3cb51URUaJf1-aKA+9jrwcLou-TCwSW3hrDkec3f8vtBcFKmqQDlRDFHrNO70+-woWRhaz5bUWOZlA+pLGc-fS5b-rwSfvzLCWKlZcH+diKf-5JJIS1HWdXV3hjJXwD5Re29rnZr1GrOHiZth5HFUHf1pV4qw==.jpg", "desc": "Apartamento à Venda - 2 Dormitórios, Semi-Mobiliado e Reformado • Esse confortável apartamento de 2 dormitórios é uma excelente opção para quem busca praticidade e conveniência. Localizado em um edifício com elevador…", "tier": "secondary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Nova Casarão Imóveis", "ref": "AP27875-NOW9", "neighborhood": "Aviação", "bedrooms": 1, "suites": 1, "bathrooms": 2, "garages": 1, "area": 55.0, "price": 350000.0, "condo": 650.0, "iptu": 316.0, "updated_at": "2026-08-20", "url": "https://www.novacasarao.com.br/imovel/apartamento-praia-grande-1-quarto-55-m/AP27875-NOW9", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu35I08JiwC8dlMkaZ52Rtwq2zrzN3dy-thWmyLTOoJeF2M6vA+DHzYRh1-fPSFn8sLxsQPgGPx1rOMlkXUbOD42jeWQPpwaO+h7WFbxFY1Jr1iwNrRkIx3SwAoSW11I3yhiuTtDcrRHdUpHrGAF8EvZHR9ox7ltMqBezU0J8p0oF7Jq1qTLdaOenJpi9yWxNWAZ8vJq+TqjzwtiOK59nSeUyO3cb51URUaJf1-aKA+9jrwcLou-TCwSW3hrDkec3f8vtBcFLmqcEkxDLGOBJ40u9zoHEgPH5aUiFYQBr9L-O--OxP6-wH-ygdSWhgYsA99DcYstcMIvrQDQVACc5MDwUqVy2qvTa4hirbD-YuBAKChPH1Zw1.jpg", "desc": "Descubra o seu refúgio à beira-mar neste incrível apartamento à venda, localizado a apenas 200 metros da praia, na privilegiada Aviação em Praia Grande! • Com um dormitório amplo, este apartamento oferece 63 metros…", "tier": "secondary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Nova Casarão Imóveis", "ref": "AP34619-NOW9", "neighborhood": "Aviação", "bedrooms": 2, "suites": 1, "bathrooms": 2, "garages": 1, "area": 78.0, "price": 400000.0, "condo": 682.19, "iptu": 300.0, "updated_at": "2026-08-19", "url": "https://www.novacasarao.com.br/imovel/apartamento-praia-grande-2-quartos-78-m/AP34619-NOW9", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtux5h0NR-2Dcfgu0YY43vkxuM-r-Iycq8gVqc2YH25OzqhPrye-ybz71liar3I1W3tvFOQvsCBBpFTu4gezWvdYeQOUp7pBycj0yVZOdWX2ML4Fw5ihFP7VK6GN2PwFog2zqOUsTFlSCHdoPcKnhjSbMNAdsz6EIJ9xa9SUxy8h8d55m-oS7TO7S-K5+hxzlXFx5k9oa+Squ619jCLJU4Vr0lNm4L5VMZWe0S2-TJT-8+5wEDqv3JFhXchgzWgPAoc9j0Qd1OmKQHiAfASbVHvxizw4fD0PCqak7UYAU88umY+fKybfz1TfigOWWtkpoCu5mVLs1OJMfrXzYXAzhnLjVRp1LkteiL+gDnZ3jWtl0VWAvE3NE=.jpg", "desc": "Apartamento para venda Bairro Aviação | Praia Grande/SP • Excelente oportunidade para quem busca conforto, praticidade e uma ótima localização! • Este amplo apartamento conta com 78 m² de área útil…", "tier": "secondary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Agência da Praia Imóveis", "ref": "AP3732-KEIM", "neighborhood": "Vila Tupi", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 56.0, "price": 360000.0, "condo": 510.0, "iptu": 350.0, "updated_at": "2026-08-18", "url": "https://www.agenciadapraia.com.br/imovel/apartamento-praia-grande-1-quarto-56-m/AP3732-KEIM", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu3pd-fxw5AgwwskQVqSlnwCk0oK194aE9ErMx573r7DAkOX7VumHwoRn-an8CnnwlqpmdoIdKG8kQcxhSSW3UoaKJmVqvzLd-WXna7pNWmN3xxxpug4OgWu-AqmmskQP0RmfCe3g8jOmCY-APlpZDrMNAdIz7EIJ8RC9W0J8p0oF7Jq1qTLdaOenJpi9yWxNWAZ8vJq+TqjzwtiOK59nSeUyO3cb51URUaJf1-aKA+9jrwcLou-TCwSW3hrDkec3f8vtBcFKmqQDlRDFHrNO70+-woWRhaz5bUWOZlA+pLGc-fS5b-rwSfvzLCWKlZcH+diKf-5JJIS1HWdXV3hjJXwD5Re29rnZr1GrOHiZth5HFUHf1pV4qw==.jpg", "desc": "Comprar apartamento 1 quarto Tupi Praia GrandeSP • Apartamento com 1 dormitório, sala, sacada, 1 banheiro social, cozinha com armários e área de serviço. • 1 vaga de garagem coletiva. • Área de lazer com salão…", "tier": "primary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Nova Casarão Imóveis", "ref": "AP34140-NOW9", "neighborhood": "Vila Tupi", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 74.0, "price": 310000.0, "condo": 475.0, "iptu": 310.0, "updated_at": "2026-08-14", "url": "https://www.novacasarao.com.br/imovel/apartamento-praia-grande-1-quarto-74-m/AP34140-NOW9", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu3Z4-e5X+gwUiMQlBuSeowKt-ZepyM+gvmC2xa355OLf2+jNf53ll7wkzK-PT2+D44VBefopIh95UOd9YDbGb4SRHFl9+2iCiUnWF7scanJ19j4ygjRtnwWAAqGlrAUc6j2dCqPXtz6REq-mW2d6Lb1HR9ox7ltMqBezU0J8p0oF7Jq1qTLdaOenJpi9yWxNWAZ8vJq+TqjzwtiOK59nSeUyO3cb51URUaJf1-aKA+9jrwcLou-TCwSW3hrDkec3f8vtBcFLmqcEkxDLGOBJ40u9zoHEgPH5aUiFYQBr9L-O--OxP6-wH-ygdSWhgYsA99DcYstcMIvrQDQVACc5MDwUqVy2qvTa4hirbD-YuBAKChPH1Zw1.jpg", "desc": "Apartamento à venda na Vila Tupi com planta ampla de 74 m² úteis, 1 dormitório, sala espaçosa para 2 ambientes, cozinha, área de serviço, elevador e 1 vaga de garagem.", "tier": "primary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Nova Casarão Imóveis", "ref": "AP34568-NOW9", "neighborhood": "Vila Guilhermina", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 55.0, "price": 314000.0, "condo": 404.0, "iptu": 156.85, "updated_at": "2026-08-14", "url": "https://www.novacasarao.com.br/imovel/apartamento-praia-grande-1-quarto-55-m/AP34568-NOW9", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu0lVlYxz4AcOjvgHA+SGrDWI6YqM-tCCtUax37+MvO7+58D5DdmF0KUH+KSsMgKBmLBleZkNLnx9V8MjYEPXTtqLAT1IoBvR-HjSa4B-Gm9Z2xA0ky92zQe3Zprw-Xxt3SiVEs-m+wOWaIrHLgdDQPlLCdkx8QdQ8Bi1SUxy8h8d55m-oS7TO7S-K5+hxzlXFx5k9oa+Squ619jCLJU4Vr0lNm4L5VMZWe0S2-TJT-8+5wEDqv3JFhXchgzWgPAoc9j0Qd1OmKQHiAfASbVHvxizw4fD0PCqak7UYAU88umY+fKybfz1TfigOWWtkpoCu5mVLs1OJMfrXzYXAzhnLjVRp1LkteiL+gDnZ3jWtl0VWAvE3NE=.jpg", "desc": "Oportunidade na Vila Guilhermina a 400 metros da praia: apartamento de 1 dormitório (55 m² úteis) em região comercial movimentada, com sala para 2 ambientes, sacada, elevador e 1 vaga.", "tier": "primary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Nova Casarão Imóveis", "ref": "AP34518-NOW9", "neighborhood": "Vila Tupi", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 65.0, "price": 350000.0, "condo": 618.04, "iptu": 306.32, "updated_at": "2026-08-14", "url": "https://www.novacasarao.com.br/imovel/apartamento-praia-grande-1-quarto-65-m/AP34518-NOW9", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu3pL3dBZxwoF19ozTpbn5wmb4oSSxNCAsnaMxr3MhKqK0MikRN7Uw9scyajaOwaMt5xaaoMeb1pQX9Z3ex74aLeuZCgOiGeFmWmIQqZLUUR87gYYzgtxmHGBAKTy9EQx9SeIW+jmsj+PYo3kIkBmFrMNAdsz6EIJ9xa9SUxy8h8d55m-oS7TO7S-K5+hxzlXFx5k9oa+Squ619jCLJU4Vr0lNm4L5VMZWe0S2-TJT-8+5wEDqv3JFhXchgzWgPAoc9j0Qd1OmKQHiAfASbVHvxizw4fD0PCqak7UYAU88umY+fKybfz1TfigOWWtkpoCu5mVLs1OJMfrXzYXAzhnLjVRp1LkteiL+gDnZ3jWtl0VWAvE3NE=.jpg", "desc": "Apartamento à Venda com 1 Dormitório e Vista para o Mar na Vila Tupi em Praia Grande • Se você procura um apartamento à venda na Vila Tupi, em Praia Grande, a poucos passos da praia, esta é uma excelente oportunidade…", "tier": "primary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Nova Casarão Imóveis", "ref": "AP9715-NOW9", "neighborhood": "Vila Tupi", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 55.0, "price": 375000.0, "condo": 670.0, "iptu": 260.0, "updated_at": "2026-08-14", "url": "https://www.novacasarao.com.br/imovel/apartamento-praia-grande-1-quarto-55-m/AP9715-NOW9", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtu0V9+d5iygY6sPFGe7C4gyTf8YKY3eCnpmCa3IHZlZ3J-9-YePjblqQYivP1KF+XiaEgTMMQFnFXdekjRT7EbbuJB3priWi+vEvHS5xIUzRqhBoOnVJMnGSzfoex6FU6ySH8CfPcrRKjaOXFL3sHLLMNAdsz6EIJ9xa9SUxy8h8d55m-oS7TO7S-K5+hxzlXFx5k9oa+Squ619jCLJU4Vr0lNm4L5VMZWe0S2-TJT-8+5wEDqv3JFhXchgzWgPAoc9j0Qd1OmKQHiAfASbVHvxizw4fD0PCqak7UYAU88umY+fKybfz1TfigOWWtkpoCu5mVLs1OJMfrXzYXAzhnLjVRp1LkteiL+gDnZ3jWtl0VWAvE3NE=.jpg", "desc": "Apartamento mobiliado na Vila Tupi, um dos melhores bairros de Praia Grande. • São 55 m² de conforto e praticidade, com 1 dormitório, sala ampla, cozinha funcional, 2 sacadas, banheiro, área de serviço e 1 vaga…", "tier": "primary", "mirror_of": "", "is_secondary_mirror": false}, {"agency": "Nova Casarão Imóveis", "ref": "AP32414-NOW9", "neighborhood": "Vila Guilhermina", "bedrooms": 1, "suites": 0, "bathrooms": 1, "garages": 1, "area": 65.0, "price": 320000.0, "condo": 550.0, "iptu": 283.0, "updated_at": "2026-08-11", "url": "https://www.novacasarao.com.br/imovel/apartamento-praia-grande-1-quarto-65-m/AP32414-NOW9", "photo": "https://img.kenlo.io/VWRCUkQ2Tnp3d1BJRDBJVe1szkhnWr9UfpZS9ftWwjXgr7v5Znen3XVcMHllDVRJJeIbi3YwVYEtux1q39lA9DlussM3ROSBlSCq7LrJttKEq0iXvazUnZ-67MfEQJ3azaEe1om2NkWO764-Z+N+KW9HNtRrGg7vfduAAmJzrxeTh2vxf6tLdFBv3gsciRNU5lTkXr7pzmY99BOUJa+HpRDXYL3jEG1cSuJHR9ox7ltMqBezU0J8p0oF7Jq1qTLdaOenJpi9yWxNWAZ8vJq+TqjzwtiOK59nSeUyO3cb51URUaJf1-aKA+9jrwcLou-TCwSW3hrDkec3f8vtBcFLmqcEkxDLGOBJ40u9zoHEgPH5aUiFYQBr9L-O--OxP6-wH-ygdSWhgYsA99DcYstcMIvrQDQVACc5MDwUqVy2qvTa4hirbD-YuBAKChPH1Zw1.jpg", "desc": "Apartamento a venda em Praia Grande! • Lindo apartamento amplo no bairro Jd. Guilhermina, contendo 65 metros de área útil distribuídos em 1 quarto, 2 sacadas e demais dependências. • Residencial bem localizado…", "tier": "primary", "mirror_of": "", "is_secondary_mirror": false}];
+
+    const TOP15_RANKS = {"CP-19120": 1, "AP20240-KEIM": 2, "AP17570-KEIM": 3, "CP-19630": 4, "AP33456-NOW9": 5, "IMIG-5623": 6, "AP18657-PLA": 7, "AP9179-NOW9": 8, "AP34568-NOW9": 9, "AP34140-NOW9": 10, "AP19675-KEIM": 11, "AP19893-KEIM": 12, "PL-3275": 13, "AP3035-PLA": 14, "NK-14885325": 15};
+    const ALL_AGENCIES = [
+      "Todas",
+      "Nova Casarão Imóveis",
+      "Agência da Praia Imóveis",
+      "Plaza Imóveis",
+      "Casa Paris Imóveis",
+      "Imigrantes Imóveis",
+      "Praialar Imóveis",
+      "Imobiliária Nova Kennedy",
+      "RE/MAX Praia Grande"
+    ];
+
+    let activeAgency = "Todas";
+
+    const fmtBRL = (val) => {
+      return Number(val).toLocaleString('pt-BR', {
+        style: 'currency',
+        currency: 'BRL',
+        maximumFractionDigits: 0
+      });
+    };
+
+    const fmtDateBR = (iso) => {
+      if (!iso) return '';
+      const parts = iso.split('-');
+      if (parts.length !== 3) return iso;
+      return `${parts[2]}/${parts[1]}/${parts[0]}`;
+    };
+
+    const fallbackSvg = (agency, neigh) => {
+      const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400">
+        <rect width="600" height="400" fill="#1E293B"/>
+        <text x="50%" y="46%" dominant-baseline="middle" text-anchor="middle" fill="#94A3B8" font-family="sans-serif" font-size="18" font-weight="600">${agency}</text>
+        <text x="50%" y="56%" dominant-baseline="middle" text-anchor="middle" fill="#64748B" font-family="monospace" font-size="14">${neigh} • Praia Grande/SP</text>
+      </svg>`;
+      return 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
+    };
+
+    function renderAgencyPills() {
+      const container = document.getElementById('agencyPills');
+      const counts = { "Todas": LISTINGS.length, "RE/MAX Praia Grande": 0 };
+      LISTINGS.forEach(it => {
+        counts[it.agency] = (counts[it.agency] || 0) + 1;
+      });
+
+      container.innerHTML = ALL_AGENCIES.map(ag => {
+        const c = counts[ag] || 0;
+        const isActive = activeAgency === ag ? 'active' : '';
+        return `<button type="button" class="agency-pill ${isActive}" data-agency="${ag}">
+          <span>${ag}</span>
+          <span class="count">${c}</span>
+        </button>`;
+      }).join('');
+
+      container.querySelectorAll('.agency-pill').forEach(btn => {
+        btn.addEventListener('click', () => {
+          activeAgency = btn.getAttribute('data-agency');
+          renderAgencyPills();
+          renderListings();
+        });
+      });
+    }
+
+    function renderListings() {
+      const neighFilter = document.getElementById('filterNeighborhood').value;
+      const bedsFilter = document.getElementById('filterBedrooms').value;
+      const maxPrice = Number(document.getElementById('filterMaxPrice').value);
+      const maxCondo = Number(document.getElementById('filterMaxCondo').value);
+      const sortBy = document.getElementById('sortBy').value;
+      const query = document.getElementById('searchInput').value.trim().toLowerCase();
+
+      let filtered = LISTINGS.filter(it => {
+        if (activeAgency !== "Todas" && it.agency !== activeAgency) return false;
+
+        if (neighFilter === "TOP15" && !TOP15_RANKS[it.ref]) return false;
+        if (neighFilter === "PRIMARY" && it.tier !== "primary") return false;
+        if (neighFilter === "SECONDARY" && it.tier !== "secondary") return false;
+        if (!["ALL", "TOP15", "PRIMARY", "SECONDARY"].includes(neighFilter) && it.neighborhood !== neighFilter) return false;
+
+        if (bedsFilter !== "ALL" && String(it.bedrooms) !== bedsFilter) return false;
+        if (it.price > maxPrice) return false;
+        if (it.condo > maxCondo) return false;
+
+        if (query) {
+          const hay = `${it.ref} ${it.agency} ${it.neighborhood} ${it.desc}`.toLowerCase();
+          if (!hay.includes(query)) return false;
+        }
+        return true;
+      });
+
+      filtered.sort((a, b) => {
+        if (sortBy === "RANK_ASC" || (neighFilter === "TOP15" && sortBy === "RECENT")) {
+          const ra = TOP15_RANKS[a.ref] || 999;
+          const rb = TOP15_RANKS[b.ref] || 999;
+          if (ra !== rb) return ra - rb;
+        }
+        if (sortBy === "RECENT") {
+          if (b.updated_at !== a.updated_at) return b.updated_at.localeCompare(a.updated_at);
+          return a.price - b.price;
+        }
+        if (sortBy === "PRICE_ASC") return a.price - b.price;
+        if (sortBy === "CONDO_ASC") return a.condo - b.condo;
+        if (sortBy === "TOTAL_MONTHLY_ASC") {
+          const aKnown = Boolean(a.iptu && a.iptu > 0);
+          const bKnown = Boolean(b.iptu && b.iptu > 0);
+          if (aKnown !== bKnown) return aKnown ? -1 : 1;
+          return (a.condo + (a.iptu || 0)) - (b.condo + (b.iptu || 0));
+        }
+        if (sortBy === "AREA_DESC") return b.area - a.area;
+        if (sortBy === "PSM_ASC") return (a.price / a.area) - (b.price / b.area);
+        return 0;
+      });
+
+      const countEl = document.getElementById('resultsCount');
+      countEl.innerHTML = `Exibindo <span>${filtered.length}</span> de ${LISTINGS.length} apartamentos verificados`;
+
+      const statsEl = document.getElementById('quickStats');
+      if (filtered.length > 0) {
+        const minPrice = Math.min(...filtered.map(x => x.price));
+        const avgCondo = Math.round(filtered.reduce((s, x) => s + x.condo, 0) / filtered.length);
+        const avgArea = Math.round(filtered.reduce((s, x) => s + x.area, 0) / filtered.length);
+        statsEl.innerHTML = `
+          <span>Menor Preço: <strong>${fmtBRL(minPrice)}</strong></span>
+          <span>•</span>
+          <span>Condomínio Médio: <strong>${fmtBRL(avgCondo)}/mês</strong></span>
+          <span>•</span>
+          <span>Área Média: <strong>${avgArea} m²</strong></span>
+        `;
+      } else {
+        statsEl.innerHTML = '';
+      }
+
+      const grid = document.getElementById('cardsGrid');
+      if (filtered.length === 0) {
+        if (neighFilter === "Sítio do Campo") {
+          grid.innerHTML = `
+            <div class="empty-state">
+              <h4>Sítio do Campo (Tude Bastos / Guaramar): 0 apartamentos verticais com elevador até R$ 400 mil</h4>
+              <p>Devido ao zoneamento de gabarito baixo no entorno do Aeródromo/Terminal Tude Bastos, a oferta até R$ 400 mil no Sítio do Campo é composta por Casas/Sobrados de Condomínio (25 unidades na Praialar Imóveis) ou prédios baixos de escada sem elevador (como o Cód. AP30867-NOW9 na Nova Casarão Imóveis, 2 quartos, 72 m², R$ 380 mil, 1º andar de escada). Para deslocamento rápido à Rua Dom Pedro II, 25 (Centro de Santos) com elevador e portaria, priorize Vila Guilhermina e Vila Tupi.</p>
+              <button type="button" class="btn-reset" onclick="document.getElementById('filterNeighborhood').value='PRIMARY';renderListings();">Ver Principais com Elevador: Guilhermina + Tupi (60 imóveis)</button>
+            </div>
+          `;
+        } else if (activeAgency === "RE/MAX Praia Grande") {
+          grid.innerHTML = `
+            <div class="empty-state">
+              <h4>RE/MAX Praia Grande: 0 imóveis aprovados simultaneamente nos 7 critérios</h4>
+              <p>Foram auditados 75 imóveis da RE/MAX em Praia Grande até R$ 400 mil. Na Vila Guilhermina e Vila Tupi, as opções até R$ 400 mil tinham área inferior a 55 m² (ex: Cód. 602321028-128 com 49 m² e Cód. 691341006-5 com 45,58 m²) ou data de atualização anterior a agosto/2026 (Cód. 691161020-8). Na Cidade Ocian, o apartamento Cód. 601251257-59 (R$ 335 mil, Cond. R$ 603, com elevador e 1 vaga, set/2026) possui 54 m² (1 m² abaixo do mínimo de 55 m²).</p>
+              <button type="button" class="btn-reset" onclick="activeAgency='Todas';renderAgencyPills();renderListings();">Ver todas as corretoras (100 imóveis)</button>
+            </div>
+          `;
+        } else {
+          grid.innerHTML = `
+            <div class="empty-state">
+              <h4>Nenhum apartamento encontrado com esta combinação de filtros</h4>
+              <p>Experimente ampliar os filtros de bairro, condomínio ou preço para visualizar os demais imóveis verificados.</p>
+              <button type="button" class="btn-reset" id="emptyResetBtn">Restaurar Filtros Padrão</button>
+            </div>
+          `;
+          const er = document.getElementById('emptyResetBtn');
+          if (er) er.addEventListener('click', resetFilters);
+        }
+        return;
+      }
+
+      grid.innerHTML = filtered.map(it => {
+        const psm = Math.round(it.price / it.area);
+        const hasKnownIptu = Boolean(it.iptu && it.iptu > 0);
+        const iptuVal = hasKnownIptu ? `${fmtBRL(it.iptu)}` : 'N/I';
+        const fixoText = hasKnownIptu ? fmtBRL(it.condo + it.iptu) : `${fmtBRL(it.condo)} + IPTU`;
+        const suiteText = it.suites > 0 ? ` (${it.suites} suíte)` : '';
+        const fallback = fallbackSvg(it.agency, it.neighborhood);
+        const photoSrc = it.photo ? it.photo : fallback;
+        const tierLabel = it.tier === 'primary' ? `⭐ ${it.neighborhood}` : it.neighborhood;
+        const topRank = TOP15_RANKS[it.ref];
+        const topRibbon = topRank ? `<a href="./index.html#rank-${topRank}" style="display:flex;justify-content:space-between;align-items:center;background:linear-gradient(90deg,#78350F,#92400E);color:#FEF3C7;text-decoration:none;padding:0.4rem 0.85rem;font-size:0.75rem;font-weight:700;font-family:var(--font-mono);"><span>🏆 TOP #${topRank} DA ESCOLHA PESSOAL</span><span>Ver justificativa ↗</span></a>` : '';
+
+        return `
+          <article class="property-card" style="${topRank ? 'border:1.5px solid #F59E0B;' : ''}">
+            ${topRibbon}
+            <div class="card-media">
+              <img src="${photoSrc}" alt="Foto do apartamento ${it.ref} em ${it.neighborhood}" loading="lazy" onerror="this.onerror=null;this.src='${fallback}';" />
+              <div class="badge-overlay-top">
+                <span class="badge-agency">${it.agency}</span>
+                <span class="badge-date" title="Data de atualização/cadastro verificada">📅 ${fmtDateBR(it.updated_at)}</span>
+              </div>
+              <div class="badge-overlay-bottom">
+                <span class="badge-neigh ${it.tier}">${tierLabel}</span>
+                <span class="badge-ref">Ref: ${it.ref}</span>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <div class="price-row">
+                <div class="sale-price-block">
+                  <span class="sale-price-label">Valor de Venda</span>
+                  <span class="sale-price">${fmtBRL(it.price)}</span>
+                </div>
+                <div class="monthly-box">
+                  <div class="monthly-line">Cond: <strong>${fmtBRL(it.condo)}/mês</strong></div>
+                  <div class="monthly-sub">IPTU: ${iptuVal} • Fixo: ${fixoText}</div>
+                </div>
+              </div>
+
+              <div class="specs-grid">
+                <div class="spec-cell">
+                  <span class="spec-val">${Number(it.area).toLocaleString('pt-BR')} m²</span>
+                  <span class="spec-lbl">Área Útil</span>
+                </div>
+                <div class="spec-cell">
+                  <span class="spec-val">${it.bedrooms} Qt${suiteText}</span>
+                  <span class="spec-lbl">Dormitórios</span>
+                </div>
+                <div class="spec-cell">
+                  <span class="spec-val">${it.garages} Vg • Elev</span>
+                  <span class="spec-lbl">✓ Elevador</span>
+                </div>
+                <div class="spec-cell">
+                  <span class="spec-val">${fmtBRL(psm)}</span>
+                  <span class="spec-lbl">Valor / m²</span>
+                </div>
+              </div>
+
+              <p class="card-desc">${it.desc || 'Apartamento à venda em Praia Grande com elevador, vaga de garagem e documentação verificada.'}</p>
+              ${it.mirror_of ? `<div style="font-size:0.72rem;color:#0369A1;background:#F0F9FF;border:1px solid #BAE6FD;padding:0.25rem 0.5rem;border-radius:4px;font-family:var(--font-mono);">🔗 Espelho multi-corretora: também em ${it.mirror_of}</div>` : ''}
+
+              <div class="card-footer">
+                <a href="${it.url}" target="_blank" rel="noopener noreferrer" class="btn-visit">
+                  Abrir anúncio oficial na ${it.agency} ↗
+                </a>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
+    function resetFilters() {
+      activeAgency = "Todas";
+      document.getElementById('filterNeighborhood').value = "ALL";
+      document.getElementById('filterBedrooms').value = "ALL";
+      document.getElementById('filterMaxPrice').value = "400000";
+      document.getElementById('filterMaxCondo').value = "800";
+      document.getElementById('sortBy').value = "RECENT";
+      document.getElementById('searchInput').value = "";
+      renderAgencyPills();
+      renderListings();
+    }
+
+    ['filterNeighborhood', 'filterBedrooms', 'filterMaxPrice', 'filterMaxCondo', 'sortBy'].forEach(id => {
+      document.getElementById(id).addEventListener('change', renderListings);
+    });
+    document.getElementById('searchInput').addEventListener('input', renderListings);
+    document.getElementById('btnReset').addEventListener('click', resetFilters);
+
+    renderAgencyPills();
+    renderListings();
+  </script>
+</body>
+</html>
